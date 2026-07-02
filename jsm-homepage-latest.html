@@ -1,0 +1,2572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal of State Management | APAG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      :root {
+        --color-primary: #7b1e2c;
+        --color-primary-dark: #5a1520;
+        --color-primary-darker: #3f0f17;
+        --color-primary-light: #a63446;
+        --color-primary-tint: #fbeeef;
+        --color-gold: #c9a961;
+        --color-gold-dark: #a9874a;
+        --color-text: #211c1e;
+        --color-text-secondary: #6b6469;
+        --color-text-muted: #9c959a;
+        --color-bg: #ffffff;
+        --color-bg-alt: #f7f4f1;
+        --color-bg-alt-2: #f1ece7;
+        --color-border: #e7e1db;
+        --color-border-strong: #d8d0c8;
+        --color-footer-bg: #18151a;
+        --color-footer-text: #b9b2b8;
+        --navy: #101e33;
+        --navy-light: #1e3a5f;
+
+        --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+        --font-sans:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+
+        --shadow-sm: 0 1px 3px rgba(33, 20, 15, 0.06);
+        --shadow-md: 0 6px 20px rgba(33, 20, 15, 0.08);
+        --shadow-lg: 0 16px 40px rgba(33, 20, 15, 0.14);
+
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 18px;
+
+        --container: 80%;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        font-family: var(--font-serif);
+        font-weight: 700;
+      }
+      p {
+        margin: 0;
+      }
+      svg {
+        display: block;
+      }
+      :focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+
+      .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .icon {
+        width: 1em;
+        height: 1em;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+      }
+      .icon-fill {
+        fill: currentColor;
+        stroke: none;
+      }
+
+      .eyebrow {
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+      }
+
+      /* ---------- Buttons ---------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 24px;
+        border-radius: var(--radius-sm);
+        font-size: 14.5px;
+        font-weight: 600;
+        border: 1.5px solid transparent;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          background 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease;
+        white-space: nowrap;
+      }
+      .btn .icon {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.15s ease;
+      }
+      .btn:hover .icon {
+        transform: translateX(3px);
+      }
+      .btn-primary {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--color-primary-dark);
+        box-shadow: var(--shadow-md);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+      .btn-outline:hover {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .btn-sm {
+        padding: 9px 16px;
+        font-size: 13.5px;
+      }
+      .btn-block {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* =========================================================
+     TOP UTILITY BAR
+  ========================================================= */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+      }
+      .top-bar {
+        background: #fff;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .top-bar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand-mark {
+        width: 80px;
+        height: 80px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        /* border-radius: 50%;
+        background: var(--color-primary-tint);
+        border: 1.5px solid var(--color-gold);
+
+        color: var(--color-primary);
+        flex-shrink: 0; */
+      }
+      .brand-mark .icon {
+        width: 22px;
+        height: 22px;
+      }
+      .brand-text-title {
+        font-family: var(--font-serif);
+        font-weight: 800;
+        font-size: 19px;
+        color: var(--color-primary);
+        letter-spacing: 0.02em;
+        line-height: 1;
+      }
+      .brand-text-line1 {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--color-text);
+        text-transform: uppercase;
+        margin-top: 5px;
+      }
+      .brand-text-line2 {
+        font-size: 11.5px;
+        color: var(--color-primary);
+        margin-top: 2px;
+      }
+
+      .utility-nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .utility-link {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--color-text);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        transition: color 0.15s ease;
+      }
+      .utility-link:hover {
+        color: var(--color-primary);
+      }
+      .utility-link .icon {
+        width: 15px;
+        height: 15px;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-toggle {
+        background: none;
+        border: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--color-text);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+      }
+      .dropdown-toggle:hover {
+        color: var(--color-primary);
+      }
+      .dropdown-toggle .icon {
+        width: 11px;
+        height: 11px;
+        transition: transform 0.18s ease;
+      }
+      .dropdown.open .dropdown-toggle .icon {
+        transform: rotate(180deg);
+      }
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translate(-50%, -6px);
+        background: #fff;
+        min-width: 150px;
+        padding: 8px;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--color-border);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.16s ease,
+          transform 0.16s ease;
+        z-index: 50;
+      }
+      .dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+      }
+      .dropdown-menu li a {
+        display: block;
+        padding: 9px 12px;
+        font-size: 13.5px;
+        border-radius: 6px;
+        color: var(--color-text);
+      }
+      .dropdown-menu li a:hover {
+        background: var(--color-bg-alt);
+        color: var(--color-primary);
+      }
+
+      .divider-v {
+        width: 1px;
+        height: 20px;
+        background: var(--color-border-strong);
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-primary);
+        padding: 4px;
+      }
+      .mobile-toggle .icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      /* ---------- Main nav ---------- */
+      .main-nav {
+        background: linear-gradient(
+          var(--color-primary) 0%,
+          var(--color-primary-dark) 100%
+        );
+      }
+      .main-nav-inner {
+        /* display: flex; */
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-list {
+        display: flex;
+        align-items: stretch;
+      }
+      .nav-item {
+        position: relative;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 15px 18px;
+        font-size: 13.8px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: 0.01em;
+        border-bottom: 3px solid transparent;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .nav-link .icon {
+        width: 11px;
+        height: 11px;
+        opacity: 0.85;
+      }
+      .nav-item:hover .nav-link,
+      .nav-item.open .nav-link {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .nav-item.active .nav-link {
+        border-bottom-color: var(--color-gold);
+        color: #fff;
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 240px;
+        background: #fff;
+        border-top: 3px solid var(--color-gold);
+        box-shadow: var(--shadow-lg);
+        padding: 8px;
+        border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        z-index: 80;
+      }
+      .nav-item.has-dropdown:hover .nav-dropdown,
+      .nav-item.open .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .nav-dropdown li a {
+        display: block;
+        padding: 10px 14px;
+        font-size: 13.6px;
+        color: var(--color-text);
+        border-radius: 6px;
+        transition:
+          background 0.15s,
+          color 0.15s,
+          padding 0.15s;
+      }
+      .nav-dropdown li a:hover {
+        background: var(--color-primary-tint);
+        color: var(--color-primary);
+        padding-left: 18px;
+      }
+
+      .nav-search-btn {
+        background: rgba(255, 255, 255, 0.12);
+        border: none;
+        color: #fff;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 4px;
+        transition: background 0.15s ease;
+        flex-shrink: 0;
+      }
+      .nav-search-btn:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .nav-search-btn .icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* =========================================================
+     HERO
+  ========================================================= */
+      .hero {
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+        padding: 64px 0 56px;
+      }
+      .hero-dots {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(123, 30, 44, 0.16) 1.6px,
+          transparent 1.6px
+        );
+        background-size: 24px 24px;
+        -webkit-mask-image: radial-gradient(
+          ellipse 55% 90% at 78% 45%,
+          #000 35%,
+          transparent 75%
+        );
+        mask-image: radial-gradient(
+          ellipse 55% 90% at 78% 45%,
+          #000 35%,
+          transparent 75%
+        );
+        pointer-events: none;
+      }
+      .hero-inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 47px;
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+      }
+      .hero-title span {
+        display: block;
+      }
+      .hero-title .line1 {
+        color: var(--color-text);
+        font-weight: 600;
+      }
+      .hero-title .line2 {
+        color: var(--color-primary);
+        font-weight: 800;
+      }
+      .hero-rule {
+        width: 64px;
+        height: 3px;
+        background: var(--color-gold);
+        margin: 22px 0;
+        border: none;
+      }
+      .hero-subtitle {
+        font-size: 17px;
+        color: var(--color-text-secondary);
+        max-width: 460px;
+        line-height: 1.6;
+      }
+
+      .hero-features {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin: 34px 0 32px;
+      }
+      .hero-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .hero-feature-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 9px;
+        /* background: var(--color-primary-tint);
+        color: var(--color-primary); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .hero-feature-icon .icon {
+        width: 17px;
+        height: 17px;
+      }
+      .hero-feature-text {
+        display: inline-block;
+      }
+
+      .hero-feature-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-text);
+        line-height: 1.3;
+        display: block;
+      }
+      .hero-feature-sub {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 2px;
+        display: block;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      /* Book mockup */
+      .hero-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .book-mockup {
+        position: relative;
+        width: 290px;
+        aspect-ratio: 290/380;
+        border-radius: 4px 10px 10px 4px;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-primary-darker) 100%
+        );
+        box-shadow:
+          -14px 0 0 -6px rgba(0, 0, 0, 0.08),
+          var(--shadow-lg);
+        color: #fff;
+        padding: 26px 24px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .book-mockup::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(201, 169, 97, 0.45) 1px,
+          transparent 1px
+        );
+        background-size: 14px 14px;
+        opacity: 0.55;
+      }
+      .book-mockup::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 9px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.05)
+        );
+      }
+      .book-issn {
+        position: relative;
+        font-size: 8.5px;
+        line-height: 1.5;
+        text-align: right;
+        opacity: 0.85;
+        margin-left: auto;
+      }
+      .book-title-wrap {
+        position: relative;
+        margin-top: 26px;
+      }
+      .book-title-wrap .line1 {
+        font-family: var(--font-serif);
+        font-size: 15px;
+        font-weight: 600;
+        opacity: 0.92;
+      }
+      .book-title-wrap .line2 {
+        font-family: var(--font-serif);
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-top: 2px;
+      }
+      .book-subtitle {
+        position: relative;
+        font-size: 9px;
+        line-height: 1.5;
+        opacity: 0.82;
+        margin-top: 10px;
+        max-width: 190px;
+      }
+      .book-spacer {
+        flex: 1;
+      }
+      .book-banner {
+        position: relative;
+        background: var(--color-gold);
+        color: var(--color-primary-darker);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-align: center;
+        padding: 7px 6px;
+        margin: 0 -24px;
+        text-transform: uppercase;
+      }
+      .book-footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .book-footer-mark {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .book-footer-mark .icon {
+        width: 11px;
+        height: 11px;
+      }
+      .book-footer-text {
+        font-size: 7.5px;
+        line-height: 1.35;
+        opacity: 0.85;
+        letter-spacing: 0.02em;
+      }
+      .book-mockup--sm {
+        width: 200px;
+        box-shadow: var(--shadow-md);
+      }
+      .book-mockup--sm .book-title-wrap {
+        margin-top: 14px;
+      }
+      .book-mockup--sm .book-title-wrap .line1 {
+        font-size: 9px;
+      }
+      .book-mockup--sm .book-title-wrap .line2 {
+        font-size: 15px;
+      }
+      .book-mockup--sm .book-subtitle {
+        display: none;
+      }
+      .book-mockup--sm .book-issn {
+        font-size: 6.5px;
+      }
+      .book-mockup--sm .book-banner {
+        font-size: 6.5px;
+        padding: 5px 4px;
+        margin: 0 -14px;
+      }
+      .book-mockup--sm .book-footer {
+        margin-top: 8px;
+      }
+      .book-mockup--sm .book-footer-text {
+        font-size: 6px;
+      }
+      .book-mockup--sm .book-footer-mark {
+        width: 14px;
+        height: 14px;
+      }
+      .book-mockup--sm .book-footer-mark .icon {
+        width: 8px;
+        height: 8px;
+      }
+      .book-mockup--sm {
+        padding: 16px 14px;
+      }
+
+      /* =========================================================
+     SEARCH BAR
+  ========================================================= */
+      .search-section {
+        background: var(--color-bg-alt);
+        padding: 28px 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .search-card {
+        background: #fff;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--color-border);
+        padding: 20px 24px;
+      }
+      .search-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 14.5px;
+        color: var(--color-text);
+        margin-bottom: 14px;
+      }
+      .search-label .icon {
+        width: 17px;
+        height: 17px;
+        color: var(--color-primary);
+      }
+      .search-form {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .search-select,
+      .search-input {
+        height: 44px;
+        border: 1.5px solid var(--color-border-strong);
+        border-radius: var(--radius-sm);
+        background: #fff;
+        font-family: inherit;
+        font-size: 13.8px;
+        color: var(--color-text);
+        padding: 0 14px;
+        transition: border-color 0.15s ease;
+      }
+      .search-select {
+        width: 100%;
+        height: 44px;
+        padding: 0 36px 0 14px; /* chừa chỗ cho icon */
+        border: 1.5px solid var(--color-border-strong);
+        border-radius: var(--radius-sm);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: #fff;
+        cursor: pointer;
+      }
+      .select-icon {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: var(--color-text-secondary);
+        font-size: 12px;
+      }
+      .search-select:hover,
+      .search-input:focus {
+        border-color: var(--color-primary);
+      }
+      .search-input {
+        flex: 1 1 220px;
+        min-width: 180px;
+      }
+      .search-input::placeholder {
+        color: var(--color-text-muted);
+      }
+      .search-submit {
+        height: 44px;
+        padding: 0 26px;
+      }
+      .search-foot {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 12px;
+      }
+      .search-foot a {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-primary);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .search-foot a .icon {
+        width: 12px;
+        height: 12px;
+      }
+      /* ===== Custom Select (tái sử dụng cho mọi .select-wrap) ===== */
+      .select-wrap {
+        position: relative;
+        border: 1.5px solid var(--color-border-strong);
+        border-radius: var(--radius-sm);
+      }
+
+      /* select gốc bị ẩn đi, chỉ dùng để giữ giá trị cho form submit */
+      .select-wrap select.search-select {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        width: 1px;
+        height: 1px;
+      }
+
+      .custom-select-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border: 1px solid var(--gold);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--maroon-dark);
+        font-size: 14px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .custom-select-trigger:hover {
+        border-color: var(--maroon);
+      }
+
+      .select-wrap.open .custom-select-trigger {
+        border-color: var(--maroon);
+        box-shadow: 0 0 0 3px rgba(122, 31, 43, 0.12);
+      }
+
+      .select-wrap .select-icon {
+        color: var(--maroon);
+        font-size: 11px;
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+        flex: 0 0 auto;
+      }
+
+      .select-wrap.open .select-icon {
+        transform: rotate(180deg);
+      }
+
+      .custom-select-options {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        min-width: 160px;
+        background: #fff;
+        border: 1px solid var(--gold-light);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(90, 26, 36, 0.15);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        pointer-events: none;
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease;
+        z-index: 30;
+        max-height: 260px;
+        overflow-y: auto;
+      }
+
+      .select-wrap.open .custom-select-options {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .custom-select-option {
+        padding: 10px 14px;
+        color: var(--text-dark);
+        font-size: 14px;
+        cursor: pointer;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .custom-select-option:hover {
+        background: var(--gold-light);
+        color: var(--maroon-dark);
+      }
+      /* 
+      .custom-select-option.selected {
+        background: var(--maroon);
+        color: #fff;
+        font-weight: 600;
+        border-left: 3px solid var(--gold);
+      } */
+
+      .custom-select-option.selected:hover {
+        background: var(--maroon-light);
+      }
+
+      .demo-note {
+        max-width: 1140px;
+        margin: 20px auto 0;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+      }
+      .demo-note code {
+        background: var(--gold-light);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: var(--maroon-dark);
+      }
+
+      @media (max-width: 640px) {
+        .search-form {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .select-wrap {
+          flex: 1 1 auto !important;
+        }
+        .search-submit {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      /* =========================================================
+     CONTENT GRID
+  ========================================================= */
+      .content-section {
+        padding: 56px 0;
+        background: #fff;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.3fr 1.05fr 0.95fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+      .card {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        transition:
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+      }
+      .card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .card-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 15.5px;
+        color: var(--color-primary);
+      }
+      .card-title .icon {
+        width: 15px;
+        height: 15px;
+      }
+      .card-title .icon-fill {
+        color: var(--color-gold-dark);
+      }
+      .card-link {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .card-link:hover {
+        color: var(--color-primary);
+      }
+      .card-link .icon {
+        width: 10px;
+        height: 10px;
+      }
+      .card-body {
+        padding: 20px 18px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 16px;
+      }
+
+      /* Current issue card */
+      .issue-cover-row {
+        display: flex;
+        justify-content: center;
+        padding-top: 4px;
+      }
+      .issue-meta {
+        text-align: center;
+      }
+      .issue-meta .vol {
+        font-weight: 700;
+        font-size: 14.5px;
+        color: var(--color-text);
+      }
+      .issue-meta .date {
+        font-size: 12.5px;
+        color: var(--color-text-secondary);
+        margin-top: 2px;
+      }
+      .issue-issn {
+        text-align: center;
+        font-size: 11px;
+        color: var(--color-text-muted);
+        line-height: 1.7;
+        margin-top: 8px;
+      }
+      .card-body-push {
+        margin-top: auto;
+      }
+
+      /* Article list */
+      .article-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .article-item {
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .article-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .article-tag {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--color-primary);
+        text-transform: uppercase;
+      }
+      .article-title {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: var(--color-text);
+        line-height: 1.35;
+        margin-top: 6px;
+      }
+      .article-title:hover {
+        color: var(--color-primary);
+      }
+      .article-authors {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        margin-top: 6px;
+      }
+      .article-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+      .article-meta {
+        font-size: 11px;
+        color: var(--color-text-muted);
+      }
+      .pdf-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        border-radius: 5px;
+        padding: 3px 8px;
+        flex-shrink: 0;
+      }
+      .pdf-link .icon {
+        width: 11px;
+        height: 11px;
+      }
+      .pdf-link:hover {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      /* Editor's choice */
+      .editor-image {
+        position: relative;
+        margin: -20px -18px 0;
+        /* height: 118px; */
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-light) 100%
+        );
+      }
+      .editor-image svg {
+        width: 100%;
+        height: 100%;
+      }
+      .editor-choice-body {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      /* Announcements */
+      .announcement-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .announcement-item {
+        display: flex;
+        gap: 12px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .announcement-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .announcement-date {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border: 1.5px solid var(--color-border-strong);
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .announcement-day {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1;
+      }
+      .announcement-month {
+        font-size: 9.5px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+        letter-spacing: 0.04em;
+        margin-top: 2px;
+      }
+      .announcement-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-text);
+        line-height: 1.35;
+      }
+      .announcement-title:hover {
+        color: var(--color-primary);
+      }
+      .announcement-sub {
+        font-size: 11.5px;
+        color: var(--color-text-secondary);
+        margin-top: 5px;
+      }
+      .announcement-sub a {
+        color: var(--color-primary);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+      }
+      .announcement-sub a .icon {
+        width: 9px;
+        height: 9px;
+      }
+
+      /* =========================================================
+     FEATURES STRIP
+  ========================================================= */
+      .features-strip {
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        padding: 20px 0;
+      }
+      .features-inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+        max-width: 100% !important;
+      }
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex: 1;
+        padding: 0 14px;
+        position: relative;
+      }
+      .feature-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 2px;
+        bottom: 2px;
+        width: 1px;
+        background: var(--color-border-strong);
+      }
+      .feature-item:first-child {
+        padding-left: 0;
+      }
+      .feature-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1.5px solid var(--color-gold);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: var(--shadow-sm);
+      }
+      .feature-icon .icon {
+        width: 17px;
+        height: 17px;
+      }
+      .feature-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.2;
+      }
+      .feature-title {
+        display: block;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--color-text);
+        line-height: 1.3;
+      }
+      .feature-desc {
+        display: block;
+        font-size: 11px;
+        color: var(--color-text-muted);
+        margin-top: 2px;
+      }
+
+      /* =========================================================
+     ABOUT PUBLISHER
+  ========================================================= */
+      .about-section {
+        padding: 48px 0;
+        background: #fff;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .about-heading {
+        font-size: 24px;
+        margin-top: 8px;
+        line-height: 1.25;
+        color: var(--color-text);
+      }
+      .about-desc {
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+        margin-top: 14px;
+      }
+      .about-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-top: 18px;
+      }
+      .about-link .icon {
+        width: 12px;
+        height: 12px;
+      }
+      .about-image {
+        position: relative;
+        height: 230px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: linear-gradient(
+          160deg,
+          #9ca9bd 0%,
+          #5b6b85 55%,
+          #2e3a4e 100%
+        );
+      }
+      .about-image svg {
+        width: 100%;
+        height: 100%;
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        width: 100%;
+      }
+      .stat-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        min-width: 0;
+      }
+      .stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--color-primary-tint);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .stat-content {
+        display: flex;
+        flex-direction: column;
+        min-width: 0; /* Quan trọng để text xuống dòng */
+      }
+      .stat-icon .icon {
+        width: 18px;
+        height: 18px;
+      }
+      .stat-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text);
+        margin-top: 2px;
+        line-height: 1.4;
+      }
+      .stat-value {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+
+      /* =========================================================
+     INDEXING BAR
+  ========================================================= */
+      .indexing-section {
+        padding: 34px 0;
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-border);
+      }
+      .indexing-title {
+        text-align: center;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .indexing-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 14px;
+      }
+      .indexing-row + .indexing-row {
+        margin-top: 12px;
+      }
+      .indexing-badge {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--color-text-secondary);
+        background: #fff;
+        border: 1px solid var(--color-border-strong);
+        border-radius: 999px;
+        padding: 8px 16px;
+        transition:
+          color 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .indexing-badge:hover {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+      .indexing-badge .icon {
+        width: 13px;
+        height: 13px;
+        opacity: 0.8;
+      }
+
+      /* =========================================================
+     FOOTER
+  ========================================================= */
+      .site-footer {
+        background: var(--color-footer-bg);
+        color: var(--color-footer-text);
+        padding: 24px 0;
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 22px;
+        font-size: 12.5px;
+      }
+      .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .footer-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .footer-inner .sep {
+        opacity: 0.4;
+      }
+      .footer-pkp {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .footer-pkp .icon {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+      @media (max-width: 1180px) {
+        .content-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-stats {
+          display: flex;
+          grid-column: 1 / -1;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .stat-item {
+          flex: 1 1 220px;
+        }
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          order: -1;
+        }
+        .hero-title {
+          font-size: 40px;
+        }
+        .hero-subtitle {
+          max-width: none;
+        }
+        .features-inner {
+          flex-wrap: wrap;
+          row-gap: 20px;
+        }
+        .feature-item {
+          flex: 1 1 30%;
+          padding: 0 10px 10px;
+        }
+        .feature-item::after {
+          display: none;
+        }
+      }
+      @media (max-width: 860px) {
+        .container {
+          padding: 0 20px;
+        }
+        .top-bar-inner {
+          padding: 12px 0;
+        }
+        .utility-nav > .utility-link,
+        .utility-nav > .divider-v,
+        .utility-nav > .dropdown {
+          display: none;
+        }
+        .utility-nav {
+          gap: 14px;
+        }
+        .mobile-toggle {
+          display: flex;
+        }
+        .brand-text-line1 {
+          display: none;
+        }
+        .main-nav {
+          display: none;
+        }
+        .main-nav.mobile-open {
+          display: block;
+        }
+        .main-nav-inner {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 6px 0;
+        }
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+        }
+        .nav-link {
+          padding: 13px 4px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          justify-content: space-between;
+        }
+        .nav-item.active .nav-link {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .nav-dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          border-radius: 0;
+          display: none;
+          background: rgba(255, 255, 255, 0.06);
+          border-top: none;
+        }
+        .nav-item.open .nav-dropdown {
+          display: block;
+        }
+        .nav-dropdown li a {
+          color: #fff;
+        }
+        .nav-dropdown li a:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: var(--color-gold);
+        }
+        .nav-search-btn {
+          display: none;
+        }
+        .hero-title {
+          font-size: 32px;
+        }
+        .hero-features {
+          grid-template-columns: 1fr 1fr;
+        }
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .about-image {
+          order: -1;
+        }
+        .search-form {
+          flex-direction: column;
+        }
+        .search-select,
+        .search-input,
+        .search-submit {
+          width: 100%;
+        }
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      @media (max-width: 520px) {
+        .hero-features {
+          grid-template-columns: 1fr 1fr;
+        }
+        .feature-item {
+          flex: 1 1 45%;
+        }
+        .hero-cta {
+          flex-direction: column;
+        }
+        .hero-cta .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <a
+            href="#"
+            class="brand"
+            aria-label="Journal of State Management — Home"
+          >
+            <span class="brand-mark">
+              <img src="/jsm-demo/image/logo-jsm.png" alt="Logo"
+            /></span>
+            <span>
+              <div class="brand-text-line1">Journal of State Management</div>
+              <div class="brand-text-line2">
+                Academy of Public Administration And Governance
+              </div>
+            </span>
+          </a>
+
+          <nav class="utility-nav" aria-label="Utility navigation">
+            <!-- <div class="dropdown" id="langDropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            English <svg class="icon"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">English</a></li>
+            <li><a href="#">Tiếng Việt</a></li>
+          </ul>
+        </div> -->
+            <span class="divider-v"></span>
+            <a href="#" class="utility-link">Contact</a>
+            <a href="#" class="utility-link">FAQs</a>
+            <span class="divider-v"></span>
+            <a href="#" class="utility-link"><i class="fa fa-user"></i>Login</a>
+            <a href="#" class="btn btn-primary btn-sm">
+              <i class="fas fa-file-alt"></i>Submit Manuscript
+            </a>
+            <button
+              class="mobile-toggle"
+              id="mobileToggle"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <div class="container main-nav-inner">
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="#top" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >About JSM <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#">About the Journal</a></li>
+                <li><a href="#">Vision &amp; Mission</a></li>
+                <li><a href="#about-publisher">Editorial Team</a></li>
+                <li><a href="#">Journal Metrics</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">Aims &amp; Scope</a>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >Editorial Board
+                <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#">Editor-in-Chief</a></li>
+                <li><a href="#">Associate Editors</a></li>
+                <li><a href="#">Advisory Board</a></li>
+                <li><a href="#">International Reviewers</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >Author Guidelines
+                <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#">Submission Guidelines</a></li>
+                <li><a href="#">Manuscript Template</a></li>
+                <li><a href="#">Publication Ethics</a></li>
+                <li><a href="#">Copyright &amp; Licensing</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >Articles <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#latest-articles">All Articles</a></li>
+                <li><a href="#latest-articles">Research Articles</a></li>
+                <li><a href="#latest-articles">Policy Analysis</a></li>
+                <li><a href="#">Book Reviews</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#current-issue" class="nav-link">Current Issue</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Archive</a></li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >Ethics &amp; Policies
+                <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#">Publication Ethics</a></li>
+                <li><a href="#">Plagiarism Policy</a></li>
+                <li><a href="#">Data &amp; AI Policy</a></li>
+                <li><a href="#">Conflict of Interest</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                >News &amp; Calls
+                <svg class="icon"><use href="#i-chevron" /></svg
+              ></a>
+              <ul class="nav-dropdown">
+                <li><a href="#announcements">Latest News</a></li>
+                <li><a href="#announcements">Call for Papers</a></li>
+                <li><a href="#">Conferences</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="line1">Journal of</span>
+            <span class="line2">State Management</span>
+          </h1>
+          <hr class="hero-rule" />
+          <!-- <p class="hero-subtitle">
+            Advancing Knowledge in Public Administration, Governance and Public
+            Policy
+          </p> -->
+
+          <div class="hero-features">
+            <div class="hero-feature">
+              <span class="hero-feature-icon">
+                <img src="/jsm-demo/image/peer-review.png" alt="Peer Review"
+              /></span>
+              <span class="hero-feature-text"
+                ><span class="hero-feature-title"> Peer Reviewed</span
+                ><span class="hero-feature-sub"> Double‑blind</span></span
+              >
+            </div>
+            <div class="hero-feature">
+              <span class="hero-feature-icon">
+                <img src="/jsm-demo/image/open-access.jpg" alt="Open Access"
+              /></span>
+              <span class="hero-feature-text"
+                ><span class="hero-feature-title"> Open Access</span
+                ><span class="hero-feature-sub"> No APC</span></span
+              >
+            </div>
+            <div class="hero-feature">
+              <span class="hero-feature-icon">
+                <img src="/jsm-demo/image/doi-crossref.jpeg" alt="DOI Crossref"
+              /></span>
+              <span class="hero-feature-text"
+                ><span class="hero-feature-title"> DOI Crossref</span
+                ><span class="hero-feature-sub"> ORCID</span></span
+              >
+            </div>
+            <div class="hero-feature">
+              <span class="hero-feature-icon">
+                <img src="/jsm-demo/image/high-quality.jpg" alt="High Quality"
+              /></span>
+              <span class="hero-feature-text"
+                ><span class="hero-feature-title"> High Quality</span
+                ><span class="hero-feature-sub"> Global Reach</span></span
+              >
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary"
+              >Submit Manuscript <i class="fas fa-arrow-right"></i
+            ></a>
+            <a href="#current-issue" class="btn btn-outline"
+              >Read Current Issue <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div
+            class="book-mockup"
+            role="img"
+            aria-label="Journal of State Management, Volume 35 Issue 1, June 2026 cover"
+          >
+            <div class="book-issn">
+              ISSN (Print): 2354-0761<br />ISSN (Online): 2734-9991
+            </div>
+            <div class="book-title-wrap">
+              <div class="line1">Journal of</div>
+              <div class="line2">State<br />Management</div>
+            </div>
+            <div class="book-subtitle">
+              Advancing Knowledge in Public Administration, Governance and
+              Public Policy
+            </div>
+            <div class="book-spacer"></div>
+            <div class="book-banner">
+              Volume 35 &nbsp;|&nbsp; Issue 1 &nbsp;|&nbsp; June 2026
+            </div>
+            <div class="book-footer">
+              <span class="book-footer-mark"
+                ><svg class="icon"><use href="#i-landmark" /></svg
+              ></span>
+              <span class="book-footer-text"
+                >APAG<br />Academy of Public Administration &amp;
+                Governance</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEARCH ============ -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-card">
+          <form class="search-form" id="searchForm">
+            <div class="select-wrap" style="flex: 0 0 150px">
+              <select class="search-select" name="field">
+                <option value="all">All Fields</option>
+                <option value="title">Title</option>
+                <option value="abstract">Abstract</option>
+                <option value="keywords">Keywords</option>
+              </select>
+            </div>
+
+            <input
+              class="search-input"
+              type="text"
+              name="q"
+              placeholder="Enter keywords, author, title, DOI..."
+            />
+
+            <div class="select-wrap" style="flex: 0 0 150px">
+              <select class="search-select" name="author">
+                <option value="">All Authors</option>
+                <option value="nguyen-van-a">Nguyễn Văn A</option>
+                <option value="tran-thi-b">Trần Thị B</option>
+                <option value="le-van-c">Lê Văn C</option>
+              </select>
+            </div>
+
+            <div class="select-wrap" style="flex: 0 0 140px">
+              <select class="search-select" name="volume">
+                <option value="">All Volumes</option>
+                <option value="12">Volume 12</option>
+                <option value="11">Volume 11</option>
+                <option value="10">Volume 10</option>
+              </select>
+            </div>
+
+            <div class="select-wrap" style="flex: 0 0 130px">
+              <select class="search-select" name="issue">
+                <option value="">All Issues</option>
+                <option value="1">Issue 1</option>
+                <option value="2">Issue 2</option>
+                <option value="3">Issue 3</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary search-submit">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTENT GRID ============ -->
+    <section class="content-section">
+      <div class="container content-grid">
+        <!-- Current Issue -->
+        <div class="card" id="current-issue">
+          <div class="card-header">
+            <span class="card-title"> Current Issue</span>
+          </div>
+          <div class="card-body">
+            <div class="issue-cover-row">
+              <div
+                class="book-mockup book-mockup--sm"
+                role="img"
+                aria-label="Current issue cover thumbnail"
+              >
+                <div class="book-issn">ISSN 2354‑0761</div>
+                <div class="book-title-wrap">
+                  <div class="line1">Journal of</div>
+                  <div class="line2">State<br />Mgmt.</div>
+                </div>
+                <div class="book-spacer"></div>
+                <div class="book-banner">Vol 35 · Iss 1</div>
+                <div class="book-footer">
+                  <span class="book-footer-mark"
+                    ><svg class="icon"><use href="#i-landmark" /></svg
+                  ></span>
+                  <span class="book-footer-text">APAG</span>
+                </div>
+              </div>
+            </div>
+            <div class="issue-meta">
+              <div class="vol">Volume 35, Issue 1</div>
+              <div class="vol">June 2026</div>
+            </div>
+            <div class="issue-meta">
+              <div class="date">Published: 26-03-2026</div>
+            </div>
+
+            <!-- <div class="issue-issn">
+              ISSN (Print): 2354-0761<br />ISSN (Online): 2734-9991
+            </div> -->
+            <div class="card-body-push">
+              <a href="#" class="btn btn-outline btn-block btn-sm"
+                >View Table of Contents <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest Articles -->
+        <div class="card" id="latest-articles">
+          <div class="card-header">
+            <span class="card-title">Latest Articles</span>
+            <a href="#" class="card-link"
+              >View all articles <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            <div class="article-list">
+              <div class="article-item">
+                <div class="article-tag">Research Article</div>
+                <a href="#" class="article-title"
+                  >Digital Transformation and Public Service Performance:
+                  Evidence from Southeast Asia</a
+                >
+                <div class="article-authors">
+                  Nguyen T. H, Ha, Le M. Dung, Pham Q. Anh
+                </div>
+                <div class="article-footer">
+                  <span class="article-meta"
+                    >Vol. 35, Issue 1 (2026) · Published 15 Jun 2026</span
+                  >
+                  <span class="pdf-link"
+                    ><i class="fas fa-file-pdf"></i> PDF</span
+                  >
+                </div>
+              </div>
+              <div class="article-item">
+                <div class="article-tag">Research Article</div>
+                <a href="#" class="article-title"
+                  >AI Governance in the Public Sector: A Systematic Review</a
+                >
+                <div class="article-authors">Tran K. Minh, Do H. Phuc</div>
+                <div class="article-footer">
+                  <span class="article-meta"
+                    >Vol. 35, Issue 1 (2026) · Published 10 Jun 2026</span
+                  >
+                  <span class="pdf-link"
+                    ><i class="fas fa-file-pdf"></i> PDF</span
+                  >
+                </div>
+              </div>
+              <div class="article-item">
+                <div class="article-tag">Policy Analysis</div>
+                <a href="#" class="article-title"
+                  >Local Autonomy and Administrative Reform in Vietnam</a
+                >
+                <div class="article-authors">Le T. Binh</div>
+                <div class="article-footer">
+                  <span class="article-meta"
+                    >Vol. 35, Issue 1 (2026) · Published 05 Jun 2026</span
+                  >
+                  <span class="pdf-link"
+                    ><i class="fas fa-file-pdf"></i> PDF</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editor's Choice -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title"
+              ><i class="fas fa-star"></i> Editor's Choice</span
+            >
+            <a href="#" class="card-link"
+              >View all <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="card-body">
+            <div class="editor-image">
+              <img src="/jsm-demo/image/AI.png" alt="Editor's Choice Article" />
+            </div>
+            <div class="editor-choice-body">
+              <div class="article-tag">Research Article</div>
+              <a href="#" class="article-title"
+                >Building Adaptive Public Policy Capacity in Emerging
+                Economies</a
+              >
+              <div class="article-authors">Vu D. Thuy</div>
+              <div class="article-meta">
+                Vol. 35, Issue 1 (2026) · Published 12 Jun 2026
+              </div>
+            </div>
+            <div class="card-body-push">
+              <a href="#" class="card-link" style="font-size: 13px"
+                >Read Article <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="card" id="announcements">
+          <div class="card-header">
+            <span class="card-title">Announcements</span>
+            <a href="#" class="card-link"
+              >View all <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="card-body">
+            <div class="announcement-list">
+              <div class="announcement-item">
+                <div class="announcement-date">
+                  <span class="announcement-day">15</span
+                  ><span class="announcement-month">MAY</span>
+                </div>
+                <div>
+                  <a href="#" class="announcement-title"
+                    >Call for Papers: Special Issue on AI and Governance</a
+                  >
+                  <div class="announcement-sub">
+                    Deadline: 30 September 2026
+                  </div>
+                </div>
+              </div>
+              <div class="announcement-item">
+                <div class="announcement-date">
+                  <span class="announcement-day">02</span
+                  ><span class="announcement-month">MAY</span>
+                </div>
+                <div>
+                  <a href="#" class="announcement-title"
+                    >Scopus Application Update</a
+                  >
+                  <div class="announcement-sub">
+                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="announcement-item">
+                <div class="announcement-date">
+                  <span class="announcement-day">28</span
+                  ><span class="announcement-month">APR</span>
+                </div>
+                <div>
+                  <a href="#" class="announcement-title"
+                    >APAG International Conference 2026</a
+                  >
+                  <div class="announcement-sub">
+                    Hanoi, Vietnam · 20–21 Nov 2026
+                  </div>
+                </div>
+              </div>
+              <div class="announcement-item">
+                <div class="announcement-date">
+                  <span class="announcement-day">10</span
+                  ><span class="announcement-month">APR</span>
+                </div>
+                <div>
+                  <a href="#" class="announcement-title"
+                    >Reviewer Acknowledgement 2025</a
+                  >
+                  <div class="announcement-sub">
+                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES STRIP ============ -->
+    <section class="features-strip">
+      <div class="container features-inner">
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-globe" /></svg
+          ></span>
+          <span class="feature-content"
+            ><span class="feature-title"> International Editorial Board</span
+            ><span class="feature-desc"> Global expertise</span></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-user" /></svg
+          ></span>
+          <span class="feature-content"
+            ><span class="feature-title"> Double‑blind Peer Review</span
+            ><span class="feature-desc"> Fair and rigorous</span></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-box" /></svg
+          ></span>
+          <span class="feature-content"
+            ><span class="feature-title"> Open Access</span
+            ><span class="feature-desc"> Immediate and free</span></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-check" /></svg
+          ></span>
+          <span class="feature-content"
+            ><span class="feature-title"> No APC</span
+            ><span class="feature-desc">
+              No Article Processing Charge</span
+            ></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-hash" /></svg
+          ></span>
+          <span
+            ><span class="feature-title"> Crossref DOI</span
+            ><span class="feature-desc"> Persistent and citable</span></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-database" /></svg
+          ></span>
+          <span
+            ><span class="feature-title"> Data &amp; AI Policy</span
+            ><span class="feature-desc"> Responsible research</span></span
+          >
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"
+            ><svg class="icon"><use href="#i-scale" /></svg
+          ></span>
+          <span
+            ><span class="feature-title"> Ethical Publishing</span
+            ><span class="feature-desc"> COPE compliant</span></span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT PUBLISHER ============ -->
+    <section class="about-section" id="about-publisher">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="eyebrow">About the Publisher</span>
+            <h2 class="about-heading">
+              Academy of Public Administration and Governance (APAG)
+            </h2>
+            <p class="about-desc">
+              APAG is the leading institution in Vietnam for education, research
+              and policy advising in public administration, governance and
+              public policy.
+            </p>
+            <a href="#" class="about-link"
+              >Learn more about APAG
+              <svg class="icon"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-icon"
+                ><svg class="icon"><use href="#i-landmark" /></svg
+              ></span>
+              <span class="stat-content"
+                ><span class="stat-label">Established</span
+                ><span class="stat-value">1959</span></span
+              >
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon"
+                ><svg class="icon"><use href="#i-pin" /></svg
+              ></span>
+              <span class="stat-content"
+                ><span class="stat-label">Location</span
+                ><span class="stat-value">Hanoi, Vietnam</span></span
+              >
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon"
+                ><svg class="icon"><use href="#i-shield" /></svg
+              ></span>
+              <span class="stat-content"
+                ><span class="stat-label">Mission</span
+                ><span class="stat-value"
+                  >Excellence in public governance and policy leadership</span
+                ></span
+              >
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon"
+                ><svg class="icon"><use href="#i-globe" /></svg
+              ></span>
+              <span class="stat-content"
+                ><span class="stat-label">Website</span
+                ><span class="stat-value">apag.edu.vn</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <section class="indexing-section">
+      <div class="container">
+        <div class="indexing-title">Indexing &amp; Abstracting</div>
+        <div class="indexing-row">
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> Scopus</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> DOAJ</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> EBSCO</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> ROAD</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> Google
+            Scholar</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> Dimensions</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-check" /></svg> OpenAIRE</span
+          >
+        </div>
+        <div class="indexing-row">
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-shield" /></svg> Publishing
+            Standards</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-shield" /></svg> COPE</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-hash" /></svg> Crossref</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-user" /></svg> ORCID</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-link" /></svg> PKP | PN</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-database" /></svg> LOCKSS</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-database" /></svg> CLOCKSS</span
+          >
+          <span class="indexing-badge"
+            ><svg class="icon"><use href="#i-globe" /></svg> Creative
+            Commons</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <span>© 2026 Journal of State Management. All rights reserved.</span>
+        </div>
+        <div class="footer-right">
+          <span>ISSN (Print): 2354-0761</span>
+          <span class="sep">|</span>
+          <span>ISSN (Online): 2734-9991</span>
+          <span class="sep">|</span>
+          <span>Publishing Platform: Open Journal Systems (OJS)</span>
+          <span class="sep">|</span>
+          <span class="footer-pkp"
+            ><svg class="icon"><use href="#i-box" /></svg> PKP</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Component tái sử dụng: biến mọi .select-wrap chứa <select> thành custom dropdown
+      function initCustomSelects(root = document) {
+        root.querySelectorAll(".select-wrap").forEach((wrap) => {
+          // tránh khởi tạo trùng
+          if (wrap.dataset.customInit) return;
+          wrap.dataset.customInit = "true";
+
+          const select = wrap.querySelector("select.search-select");
+          if (!select) return;
+
+          const trigger = document.createElement("div");
+          trigger.className = "custom-select-trigger";
+
+          const labelSpan = document.createElement("span");
+          labelSpan.className = "trigger-label";
+          labelSpan.textContent =
+            select.options[select.selectedIndex]?.text || "";
+
+          const icon = document.createElement("i");
+          icon.className = "fas fa-angle-down select-icon";
+
+          trigger.appendChild(labelSpan);
+          trigger.appendChild(icon);
+
+          const optionsBox = document.createElement("div");
+          optionsBox.className = "custom-select-options";
+
+          Array.from(select.options).forEach((opt, idx) => {
+            const optEl = document.createElement("div");
+            optEl.className =
+              "custom-select-option" +
+              (idx === select.selectedIndex ? " selected" : "");
+            optEl.textContent = opt.text;
+            optEl.dataset.value = opt.value;
+
+            optEl.addEventListener("click", () => {
+              select.selectedIndex = idx;
+              select.dispatchEvent(new Event("change", { bubbles: true }));
+
+              optionsBox
+                .querySelectorAll(".custom-select-option")
+                .forEach((o) => o.classList.remove("selected"));
+              optEl.classList.add("selected");
+              labelSpan.textContent = opt.text;
+              wrap.classList.remove("open");
+            });
+
+            optionsBox.appendChild(optEl);
+          });
+
+          wrap.appendChild(trigger);
+          wrap.appendChild(optionsBox);
+
+          trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            // đóng các dropdown khác đang mở
+            document.querySelectorAll(".select-wrap.open").forEach((w) => {
+              if (w !== wrap) w.classList.remove("open");
+            });
+            wrap.classList.toggle("open");
+          });
+        });
+
+        document.addEventListener("click", () => {
+          document
+            .querySelectorAll(".select-wrap.open")
+            .forEach((w) => w.classList.remove("open"));
+        });
+      }
+
+      initCustomSelects();
+
+      // Demo: log dữ liệu khi submit
+      document.getElementById("searchForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        alert(JSON.stringify(Object.fromEntries(data.entries()), null, 2));
+      });
+
+      (function () {
+        // Generic dropdown toggle (utility bar language dropdown)
+        document.querySelectorAll(".dropdown").forEach(function (dd) {
+          var toggle = dd.querySelector(".dropdown-toggle");
+          if (!toggle) return;
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            var isOpen = dd.classList.contains("open");
+            document.querySelectorAll(".dropdown.open").forEach(function (o) {
+              o.classList.remove("open");
+            });
+            if (!isOpen) {
+              dd.classList.add("open");
+              toggle.setAttribute("aria-expanded", "true");
+            } else {
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+
+        // Main nav dropdowns — click/tap toggle (also works via CSS :hover on desktop)
+        document
+          .querySelectorAll(".nav-item.has-dropdown > .nav-link")
+          .forEach(function (link) {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              var item = link.parentElement;
+              var isOpen = item.classList.contains("open");
+              document.querySelectorAll(".nav-item.open").forEach(function (o) {
+                o.classList.remove("open");
+              });
+              if (!isOpen) {
+                item.classList.add("open");
+              }
+            });
+          });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown.open").forEach(function (o) {
+            o.classList.remove("open");
+            var t = o.querySelector(".dropdown-toggle");
+            if (t) t.setAttribute("aria-expanded", "false");
+          });
+          document.querySelectorAll(".nav-item.open").forEach(function (o) {
+            o.classList.remove("open");
+          });
+        });
+
+        // Mobile menu toggle
+        var mobileToggle = document.getElementById("mobileToggle");
+        var mainNav = document.getElementById("mainNav");
+        var mobileToggleIcon = document.getElementById("mobileToggleIcon");
+        mobileToggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var open = mainNav.classList.toggle("mobile-open");
+          mobileToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          mobileToggleIcon.setAttribute("href", open ? "#i-close" : "#i-menu");
+        });
+
+        // Search form — prevent demo submission from reloading the page
+        var searchForm = document.getElementById("searchForm");
+        if (searchForm) {
+          searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+          });
+        }
+
+        // Placeholder links ("#") shouldn't jump to top; real in-page anchors (e.g. "#current-issue") still work
+        document.querySelectorAll('a[href="#"]').forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
