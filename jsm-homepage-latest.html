@@ -493,14 +493,15 @@
       .hero-inner {
         position: relative;
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 56px;
+        grid-template-columns: 1.15fr 0.75fr;
+        gap: 60px;
         align-items: center;
       }
       .hero-title {
         font-size: 47px;
         line-height: 1.08;
         letter-spacing: -0.01em;
+        margin-bottom: 10px;
       }
       .hero-title span {
         display: block;
@@ -523,7 +524,6 @@
       .hero-subtitle {
         font-size: 17px;
         color: var(--color-text-secondary);
-        max-width: 460px;
         line-height: 1.6;
       }
 
@@ -582,6 +582,8 @@
         position: relative;
         display: flex;
         justify-content: center;
+        max-width: 60%;
+        margin: 0 auto;
       }
       .book-mockup {
         position: relative;
@@ -748,7 +750,7 @@
   ========================================================= */
       .search-section {
         background: var(--color-bg-alt);
-        padding: 28px 0;
+        padding: 22px 0;
         border-bottom: 1px solid var(--color-border);
       }
       .search-card {
@@ -1059,6 +1061,8 @@
         display: flex;
         justify-content: center;
         padding-top: 4px;
+        max-width: 80%;
+        margin: 0 auto;
       }
       .issue-meta {
         text-align: center;
@@ -1078,10 +1082,65 @@
         font-size: 11px;
         color: var(--color-text-muted);
         line-height: 1.7;
-        margin-top: 8px;
       }
       .card-body-push {
         margin-top: auto;
+      }
+
+      .issue-facts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: var(--color-bg-alt);
+        border-radius: 10px;
+        padding: 14px;
+      }
+      .issue-fact {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .issue-fact-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid var(--color-border);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .issue-fact-icon .icon {
+        width: 14px;
+        height: 14px;
+      }
+      .issue-fact-text {
+        min-width: 0;
+      }
+      .issue-fact-label {
+        display: block;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .issue-fact-value {
+        display: block;
+        font-size: 12.5px;
+        color: var(--color-text);
+        margin-top: 3px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+      }
+      .issue-fact-value a {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+      .issue-fact-value a:hover {
+        text-decoration: underline;
       }
 
       /* Article list */
@@ -1097,6 +1156,34 @@
       .article-item:last-child {
         border-bottom: none;
         padding-bottom: 0;
+      }
+      .article-tag-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .article-badges {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .article-badge-oa {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--color-success);
+        background: var(--color-success-tint);
+        border-radius: 999px;
+        padding: 2px;
+      }
+      .article-badge-oa .icon {
+        width: 10px;
+        height: 10px;
       }
       .article-tag {
         font-size: 10.5px;
@@ -1119,6 +1206,56 @@
         font-size: 12px;
         color: var(--color-text-secondary);
         margin-top: 6px;
+      }
+      .article-dates {
+        font-size: 11.5px;
+        color: var(--color-text-secondary);
+        margin-top: 8px;
+      }
+      .article-doi {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11.5px;
+        color: var(--color-text-secondary);
+        margin-top: 6px;
+      }
+      .article-doi .icon {
+        width: 11px;
+        height: 11px;
+        color: var(--color-text-muted);
+        flex-shrink: 0;
+      }
+      .article-doi a {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+      .article-doi a:hover {
+        text-decoration: underline;
+      }
+      .article-stats {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 9px;
+        flex-wrap: wrap;
+      }
+      .article-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        color: var(--color-text-muted);
+        font-weight: 600;
+      }
+      .article-stat .icon {
+        width: 12px;
+        height: 12px;
+      }
+      .article-actions {
+        display: flex;
+        gap: 6px;
+        flex-shrink: 0;
       }
       .article-footer {
         display: flex;
@@ -1163,10 +1300,12 @@
           var(--navy) 0%,
           var(--navy-light) 100%
         );
+        max-width: 50%;
+        margin: 0 auto;
       }
       .editor-image svg {
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
       }
       .editor-choice-body {
         display: flex;
@@ -1680,6 +1819,31 @@
     </style>
   </head>
   <body>
+    <!-- ============ ICON SPRITE ============ -->
+    <!-- <svg style="display:none" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7.5 8-7.5s8 3.1 8 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2.5 15.1 9 22.3 10 17.1 15 18.4 22.2 12 18.8 5.6 22.2 6.9 15 1.7 10 8.9 9"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-7.4 7-12.2A7 7 0 1 0 5 9.8C5 14.6 12 22 12 22z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+  <symbol id="i-landmark" viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12 3 21 9 3 9"/><line x1="9" y1="21" x2="9" y2="10"/><line x1="15" y1="21" x2="15" y2="10"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l7.5 3.4v5.4c0 4.9-3.2 8.3-7.5 9.7-4.3-1.4-7.5-4.8-7.5-9.7V5.9L12 2.5z"/><polyline points="8.8 12.2 10.8 14.2 15.2 9.6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.6 2.5 4 5.7 4 9s-1.4 6.5-4 9c-2.6-2.5-4-5.7-4-9s1.4-6.5 4-9z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 2.5h7L19 8v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1z"/><polyline points="14 2.5 14 8 19 8"/><line x1="9" y1="13.5" x2="15" y2="13.5"/><line x1="9" y1="17" x2="15" y2="17"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5.5"/><polyline points="8 13.2 6.3 21.5 12 18.3 17.7 21.5 16 13.2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.3a2.8 2.8 0 1 1 4.4 2.3c-.9.6-1.6 1.1-1.6 2.2"/><line x1="12" y1="17" x2="12" y2="17.1"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><line x1="9.5" y1="3" x2="7" y2="21"/><line x1="17" y1="3" x2="14.5" y2="21"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="3" y1="15" x2="19" y2="15"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="2.5" x2="12" y2="21"/><path d="M5.5 6.5l-3 6.2a3 3 0 0 0 6 0l-3-6.2z"/><path d="M18.5 6.5l-3 6.2a3 3 0 0 0 6 0l-3-6.2z"/><line x1="6" y1="21" x2="18" y2="21"/><line x1="5" y1="6.5" x2="19" y2="6.5"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="8.5" width="18" height="12" rx="1"/><path d="M3 8.5l9-5.5 9 5.5"/><line x1="12" y1="8.5" x2="12" y2="20.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6.5 9.5 17.5 4 12"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M9.5 14.5l5-5"/><path d="M11 6.5l1-1a3.5 3.5 0 0 1 5 5l-1.5 1.5"/><path d="M13 17.5l-1 1a3.5 3.5 0 0 1-5-5l1.5-1.5"/></symbol>
+</svg> -->
 
     <!-- ============ HEADER ============ -->
     <header class="site-header">
@@ -1740,7 +1904,7 @@
 
             <li class="nav-item has-dropdown">
               <a href="#" class="nav-link"
-                >About JSM <svg class="icon"><use href="#i-chevron" /></svg
+                >About <svg class="icon"><use href="#i-chevron" /></svg
               ></a>
               <ul class="nav-dropdown">
                 <li><a href="#">About the Journal</a></li>
@@ -1769,8 +1933,7 @@
 
             <li class="nav-item has-dropdown">
               <a href="#" class="nav-link"
-                >Author Guidelines
-                <svg class="icon"><use href="#i-chevron" /></svg
+                >For Authors <svg class="icon"><use href="#i-chevron" /></svg
               ></a>
               <ul class="nav-dropdown">
                 <li><a href="#">Submission Guidelines</a></li>
@@ -1778,6 +1941,10 @@
                 <li><a href="#">Publication Ethics</a></li>
                 <li><a href="#">Copyright &amp; Licensing</a></li>
               </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">Submission</a>
             </li>
 
             <li class="nav-item has-dropdown">
@@ -1795,7 +1962,7 @@
             <li class="nav-item">
               <a href="#current-issue" class="nav-link">Current Issue</a>
             </li>
-            <li class="nav-item"><a href="#" class="nav-link">Archive</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Archives</a></li>
 
             <li class="nav-item has-dropdown">
               <a href="#" class="nav-link"
@@ -1810,10 +1977,13 @@
               </ul>
             </li>
 
+            <li class="nav-item">
+              <a href="#" class="nav-link">Indexing</a>
+            </li>
+
             <li class="nav-item has-dropdown">
               <a href="#" class="nav-link"
-                >News &amp; Calls
-                <svg class="icon"><use href="#i-chevron" /></svg
+                >Contact <svg class="icon"><use href="#i-chevron" /></svg
               ></a>
               <ul class="nav-dropdown">
                 <li><a href="#announcements">Latest News</a></li>
@@ -1836,11 +2006,17 @@
             <span class="line1">Journal of</span>
             <span class="line2">State Management</span>
           </h1>
+          <p class="hero-subtitle">
+            An international peer-reviewed journal advancing research in public
+            governance, public administration, public policy and public-sector
+            reform.
+          </p>
           <hr class="hero-rule" />
-          <!-- <p class="hero-subtitle">
-            Advancing Knowledge in Public Administration, Governance and Public
-            Policy
-          </p> -->
+          <p class="hero-subtitle">
+            Publishing original theoretical, empirical and comparative research
+            with a particular focus on developing countries, transition
+            economies and Southeast Asia.
+          </p>
 
           <div class="hero-features">
             <div class="hero-feature">
@@ -1875,7 +2051,7 @@
                 <img src="/jsm-demo/image/high-quality.jpg" alt="High Quality"
               /></span>
               <span class="hero-feature-text"
-                ><span class="hero-feature-title"> High Quality</span
+                ><span class="hero-feature-title"> Indexed & Discoverable</span
                 ><span class="hero-feature-sub"> Global Reach</span></span
               >
             </div>
@@ -1883,7 +2059,7 @@
 
           <div class="hero-cta">
             <a href="#" class="btn btn-primary"
-              >Submit Manuscript <i class="fas fa-arrow-right"></i
+              >Submit your manuscript <i class="fas fa-arrow-right"></i
             ></a>
             <a href="#current-issue" class="btn btn-outline"
               >Read Current Issue <i class="fas fa-arrow-right"></i
@@ -1892,36 +2068,7 @@
         </div>
 
         <div class="hero-visual">
-          <div
-            class="book-mockup"
-            role="img"
-            aria-label="Journal of State Management, Volume 35 Issue 1, June 2026 cover"
-          >
-            <div class="book-issn">
-              ISSN (Print): 2354-0761<br />ISSN (Online): 2734-9991
-            </div>
-            <div class="book-title-wrap">
-              <div class="line1">Journal of</div>
-              <div class="line2">State<br />Management</div>
-            </div>
-            <div class="book-subtitle">
-              Advancing Knowledge in Public Administration, Governance and
-              Public Policy
-            </div>
-            <div class="book-spacer"></div>
-            <div class="book-banner">
-              Volume 35 &nbsp;|&nbsp; Issue 1 &nbsp;|&nbsp; June 2026
-            </div>
-            <div class="book-footer">
-              <span class="book-footer-mark"
-                ><svg class="icon"><use href="#i-landmark" /></svg
-              ></span>
-              <span class="book-footer-text"
-                >APAG<br />Academy of Public Administration &amp;
-                Governance</span
-              >
-            </div>
-          </div>
+          <img src="/jsm-demo/image/new-cover-jsm.jpg" alt="Journal Cover" />
         </div>
       </div>
     </section>
@@ -1992,37 +2139,45 @@
           </div>
           <div class="card-body">
             <div class="issue-cover-row">
-              <div
-                class="book-mockup book-mockup--sm"
-                role="img"
-                aria-label="Current issue cover thumbnail"
-              >
-                <div class="book-issn">ISSN 2354‑0761</div>
-                <div class="book-title-wrap">
-                  <div class="line1">Journal of</div>
-                  <div class="line2">State<br />Mgmt.</div>
-                </div>
-                <div class="book-spacer"></div>
-                <div class="book-banner">Vol 35 · Iss 1</div>
-                <div class="book-footer">
-                  <span class="book-footer-mark"
-                    ><svg class="icon"><use href="#i-landmark" /></svg
-                  ></span>
-                  <span class="book-footer-text">APAG</span>
-                </div>
-              </div>
+              <img src="/jsm-demo/image/new-cover-jsm.jpg" alt="Journal Cover" />
             </div>
             <div class="issue-meta">
               <div class="vol">Volume 35, Issue 1</div>
               <div class="vol">June 2026</div>
             </div>
-            <div class="issue-meta">
-              <div class="date">Published: 26-03-2026</div>
+            <div class="issue-facts">
+              <div class="issue-fact">
+                <span class="issue-fact-icon"
+                  ><i class="fas fa-calendar"></i>
+                </span>
+                <div class="issue-fact-text">
+                  <span class="issue-fact-label">Published</span>
+                  <span class="issue-fact-value">26 Mar 2026</span>
+                </div>
+              </div>
+              <div class="issue-fact">
+                <span class="issue-fact-icon"
+                  ><i class="fas fa-link"></i>
+                </span>
+                <div class="issue-fact-text">
+                  <span class="issue-fact-label">DOI</span>
+                  <span class="issue-fact-value"
+                    ><a href="#">10.1234/jsm.v35i1</a></span
+                  >
+                </div>
+              </div>
+              <div class="issue-fact">
+                <span class="issue-fact-icon"
+                  ><i class="fas fa-user"></i>
+                </span>
+                <div class="issue-fact-text">
+                  <span class="issue-fact-label">Guest Editor</span>
+                  <span class="issue-fact-value"
+                    ><a href="#">Dr. Nguyen Van A</a></span
+                  >
+                </div>
+              </div>
             </div>
-
-            <!-- <div class="issue-issn">
-              ISSN (Print): 2354-0761<br />ISSN (Online): 2734-9991
-            </div> -->
             <div class="card-body-push">
               <a href="#" class="btn btn-outline btn-block btn-sm"
                 >View Table of Contents <i class="fas fa-arrow-right"></i
@@ -2042,7 +2197,12 @@
           <div class="card-body">
             <div class="article-list">
               <div class="article-item">
-                <div class="article-tag">Research Article</div>
+                <div class="article-tag-row">
+                  <span class="article-tag">Research Article</span>
+                  <span class="article-badge-oa"
+                    ><i class="fas fa-globe"></i> Open Access</span
+                  >
+                </div>
                 <a href="#" class="article-title"
                   >Digital Transformation and Public Service Performance:
                   Evidence from Southeast Asia</a
@@ -2050,43 +2210,116 @@
                 <div class="article-authors">
                   Nguyen T. H, Ha, Le M. Dung, Pham Q. Anh
                 </div>
+                <div class="article-dates">
+                  Accepted 2 Jun 2026 · Published Online 15 Jun 2026
+                </div>
+                <div class="article-doi">
+                  <i class="fas fa-link"></i> DOI:
+                  <a href="#">10.1234/jsm.v35i1.001</a>
+                </div>
+                <div class="article-stats">
+                  <span class="article-stat"
+                    ><i class="fas fa-eye"></i> 482 Views</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-download"></i> 176 Downloads</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-quote-right"></i> 3 Citations</span
+                  >
+                </div>
                 <div class="article-footer">
-                  <span class="article-meta"
-                    >Vol. 35, Issue 1 (2026) · Published 15 Jun 2026</span
-                  >
-                  <span class="pdf-link"
-                    ><i class="fas fa-file-pdf"></i> PDF</span
-                  >
+                  <span class="article-meta">Vol. 35, Issue 1 (2026)</span>
+                  <span class="article-actions">
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-code"></i> HTML</a
+                    >
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-file"></i> PDF</a
+                    >
+                  </span>
                 </div>
               </div>
               <div class="article-item">
-                <div class="article-tag">Research Article</div>
+                <div class="article-tag-row">
+                  <span class="article-tag">Research Article</span>
+                  <span class="article-badge-oa"
+                    ><i class="fas fa-globe"></i> Open Access</span
+                  >
+                </div>
                 <a href="#" class="article-title"
                   >AI Governance in the Public Sector: A Systematic Review</a
                 >
                 <div class="article-authors">Tran K. Minh, Do H. Phuc</div>
+                <div class="article-dates">
+                  Accepted 28 May 2026 · Published Online 10 Jun 2026
+                </div>
+                <div class="article-doi">
+                  <i class="fas fa-link"></i> DOI:
+                  <a href="#">10.1234/jsm.v35i1.002</a>
+                </div>
+                <div class="article-stats">
+                  <span class="article-stat"
+                    ><i class="fas fa-eye"></i> 356 Views</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-download"></i> 128 Downloads</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-quote-right"></i> 1 Citation</span
+                  >
+                </div>
                 <div class="article-footer">
-                  <span class="article-meta"
-                    >Vol. 35, Issue 1 (2026) · Published 10 Jun 2026</span
-                  >
-                  <span class="pdf-link"
-                    ><i class="fas fa-file-pdf"></i> PDF</span
-                  >
+                  <span class="article-meta">Vol. 35, Issue 1 (2026)</span>
+                  <span class="article-actions">
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-code"></i> HTML</a
+                    >
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-file"></i> PDF</a
+                    >
+                  </span>
                 </div>
               </div>
               <div class="article-item">
-                <div class="article-tag">Policy Analysis</div>
+                <div class="article-tag-row">
+                  <span class="article-tag">Policy Analysis</span>
+                  <span class="article-badge-oa"
+                    ><i class="fas fa-globe"></i> Open Access</span
+                  >
+                </div>
                 <a href="#" class="article-title"
                   >Local Autonomy and Administrative Reform in Vietnam</a
                 >
                 <div class="article-authors">Le T. Binh</div>
+                <div class="article-dates">
+                  Accepted 20 May 2026 · Published Online 05 Jun 2026
+                </div>
+                <div class="article-doi">
+                  <i class="fas fa-link"></i> DOI:
+                  <a href="#">10.1234/jsm.v35i1.003</a>
+                </div>
+                <div class="article-stats">
+                  <span class="article-stat"
+                    ><i class="fas fa-eye"></i> 210 Views</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-download"></i> 84 Downloads</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-quote-right"></i> 0 Citations</span
+                  >
+                </div>
                 <div class="article-footer">
-                  <span class="article-meta"
-                    >Vol. 35, Issue 1 (2026) · Published 05 Jun 2026</span
-                  >
-                  <span class="pdf-link"
-                    ><i class="fas fa-file-pdf"></i> PDF</span
-                  >
+                  <span class="article-meta">Vol. 35, Issue 1 (2026)</span>
+                  <span class="article-actions">
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-code"></i> HTML</a
+                    >
+                    <a href="#" class="pdf-link"
+                      ><i class="fas fa-file"></i> PDF</a
+                    >
+                  </span>
                 </div>
               </div>
             </div>
@@ -2105,10 +2338,20 @@
           </div>
           <div class="card-body">
             <div class="editor-image">
-              <img src="/jsm-demo/image/AI.png" alt="Editor's Choice Article" />
+              <img src="/jsm-demo/image/circle.png" alt="Editor's Choice Article" />
             </div>
             <div class="editor-choice-body">
-              <div class="article-tag">Research Article</div>
+              <div class="article-tag-row">
+                <span class="article-tag">Research Article</span>
+                <div class="article-badges">
+                  <span class="article-badge-oa"
+                    ><i class="fas fa-globe"></i> Open Access</span
+                  >
+                  <span class="article-badge-oa"
+                    ><i class="fas fa-star"></i> Editor's Choice</span
+                  >
+                </div>
+              </div>
               <a href="#" class="article-title"
                 >Building Adaptive Public Policy Capacity in Emerging
                 Economies</a
@@ -2117,6 +2360,21 @@
               <div class="article-meta">
                 Vol. 35, Issue 1 (2026) · Published 12 Jun 2026
               </div>
+              <div class="article-doi">
+                  <i class="fas fa-link"></i> DOI:
+                  <a href="#">10.1234/jsm.v35i1.003</a>
+                </div>
+                <div class="article-stats">
+                  <span class="article-stat"
+                    ><i class="fas fa-eye"></i> 210 Views</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-download"></i> 84 Downloads</span
+                  >
+                  <span class="article-stat"
+                    ><i class="fas fa-quote-right"></i> 0 Citations</span
+                  >
+                </div>
             </div>
             <div class="card-body-push">
               <a href="#" class="card-link" style="font-size: 13px"
@@ -2274,7 +2532,7 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-text">
-            <span class="eyebrow">About the Publisher</span>
+            <span class="eyebrow">About Governing Institution</span>
             <h2 class="about-heading">
               Academy of Public Administration and Governance (APAG)
             </h2>
@@ -2339,54 +2597,58 @@
         <div class="indexing-title">Indexing &amp; Abstracting</div>
         <div class="indexing-row">
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> Scopus</span
+            ><img src="/jsm-demo/image/scopus-icon.jpeg" height="22"
+          /></span>
+          <span class="indexing-badge"
+            ><img src="/jsm-demo/image/DOAJ-icon.jpeg" height="22" />
+          </span>
+          <span class="indexing-badge"
+            ><img src="/jsm-demo/image/EBSCO-icon.jpeg" height="22"
+          /></span>
+          <span class="indexing-badge"
+            ><img src="/jsm-demo/image/ROAD-icon.jpeg" height="22"
+          /></span>
+          <span class="indexing-badge"
+            ><img src="https://cdn.simpleicons.org/googlescholar" height="22" />
+            Google Scholar</span
           >
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> DOAJ</span
+            ><img src="/jsm-demo/image/Dimensions-icon.jpeg" height="22" />
+            Dimensions</span
           >
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> EBSCO</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> ROAD</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> Google
-            Scholar</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> Dimensions</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-check" /></svg> OpenAIRE</span
-          >
+            ><img src="/jsm-demo/image/OpenAIRE-icon.png" height="22"
+          /></span>
         </div>
         <div class="indexing-row">
+          <span class="indexing-badge">Publishing Standards</span>
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-shield" /></svg> Publishing
-            Standards</span
+            ><img src="/jsm-demo/image/COPE-icon.svg" height="22"
+          /></span>
+          <span class="indexing-badge"
+            ><img
+              src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg"
+              height="22"
+            />
+          </span>
+          <span class="indexing-badge"
+            ><!-- ORCID -->
+            <img src="https://cdn.simpleicons.org/orcid" height="22" />
+            ORCID</span
+          >
+          <span class="indexing-badge">PKP | PN</span>
+          <span class="indexing-badge"
+            ><img src="/jsm-demo/image/LOCKSS-icon.jpeg" height="22" /> LOCKSS</span
           >
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-shield" /></svg> COPE</span
-          >
+            ><img src="/jsm-demo/image/CLOCKSS-icon.jpeg" height="22"
+          /></span>
           <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-hash" /></svg> Crossref</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-user" /></svg> ORCID</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-link" /></svg> PKP | PN</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-database" /></svg> LOCKSS</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-database" /></svg> CLOCKSS</span
-          >
-          <span class="indexing-badge"
-            ><svg class="icon"><use href="#i-globe" /></svg> Creative
-            Commons</span
+            ><img
+              src="https://cdn.simpleicons.org/creativecommons"
+              height="22"
+            />
+            Creative Commons</span
           >
         </div>
       </div>
