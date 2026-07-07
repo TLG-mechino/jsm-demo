@@ -358,27 +358,32 @@
         );
       }
       .main-nav-inner {
-        /* display: flex; */
+        display: flex;
         align-items: center;
         justify-content: space-between;
       }
       .nav-list {
+        width: 100%;
         display: flex;
         align-items: stretch;
+        justify-content: space-between;
       }
       .nav-item {
+        display: flex;
         position: relative;
       }
       .nav-link {
+        flex: 1;
         display: flex;
         align-items: center;
         gap: 5px;
-        padding: 15px 18px;
+        padding: 8px;
         font-size: 13.8px;
         font-weight: 600;
         color: #fff;
         letter-spacing: 0.01em;
         border-bottom: 3px solid transparent;
+        justify-content: space-evenly;
         transition:
           background 0.15s ease,
           border-color 0.15s ease;
@@ -992,7 +997,7 @@
       }
       .content-grid {
         display: grid;
-        grid-template-columns: 0.85fr 1.3fr 1.05fr 0.95fr;
+        grid-template-columns: 0.95fr 1.05fr 1fr 0.95fr;
         gap: 22px;
         align-items: stretch;
       }
@@ -1330,6 +1335,26 @@
         border-bottom: none;
         padding-bottom: 0;
       }
+      .announcement-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+      }
+      .announcement-sep {
+        color: var(--color-border-strong);
+        font-weight: 400;
+      }
+      .announcement-date-text {
+        color: var(--color-text-muted);
+        font-weight: 600;
+        letter-spacing: normal;
+        text-transform: none;
+      }
       .announcement-date {
         flex-shrink: 0;
         width: 48px;
@@ -1354,14 +1379,41 @@
         letter-spacing: 0.04em;
         margin-top: 2px;
       }
+      .announcement-content {
+        min-width: 0;
+      }
       .announcement-title {
+        display: block;
         font-size: 13px;
         font-weight: 700;
         color: var(--color-text);
         line-height: 1.35;
+        margin-top: 6px;
       }
       .announcement-title:hover {
         color: var(--color-primary);
+      }
+      .announcement-summary {
+        font-size: 12.5px;
+        color: var(--color-text-secondary);
+        line-height: 1.55;
+        margin-top: 6px;
+      }
+      .announcement-readmore {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-top: 8px;
+      }
+      .announcement-readmore .icon {
+        width: 10px;
+        height: 10px;
+      }
+      .announcement-readmore:hover {
+        text-decoration: underline;
       }
       .announcement-sub {
         font-size: 11.5px;
@@ -1573,6 +1625,19 @@
         color: var(--color-text-muted);
         margin-bottom: 20px;
       }
+      .indexing-group + .indexing-group {
+        margin-top: 26px;
+      }
+      .indexing-group-title {
+        text-align: center;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-text-secondary);
+        margin-bottom: 12px;
+        opacity: 0.85;
+      }
       .indexing-row {
         display: flex;
         align-items: center;
@@ -1608,6 +1673,15 @@
         opacity: 0.8;
       }
 
+      .indexing-badge--target {
+        border-style: dashed;
+        color: var(--color-text-muted);
+      }
+      .indexing-badge--target:hover {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+
       /* =========================================================
      FOOTER
   ========================================================= */
@@ -1615,6 +1689,56 @@
         background: var(--color-footer-bg);
         color: var(--color-footer-text);
         padding: 24px 0;
+      }
+      .footer-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 22px;
+        font-size: 12.5px;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .footer-nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        color: var(--color-footer-text);
+        opacity: 0.75;
+        text-decoration: none;
+        transition: opacity 0.15s ease;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+      .footer-badges {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.15s ease;
+      }
+      .footer-badge:hover {
+        opacity: 1;
+      }
+      .footer-badge .icon {
+        width: 14px;
+        height: 14px;
       }
       .footer-inner {
         display: flex;
@@ -1855,7 +1979,7 @@
             aria-label="Journal of State Management — Home"
           >
             <span class="brand-mark">
-              <img src="/jsm-demo/image/logo-jsm.png" alt="Logo"
+              <img src="/jsm-demo/image/logo-jsm-latest.jpg" alt="Logo"
             /></span>
             <span>
               <div class="brand-text-line1">Journal of State Management</div>
@@ -2361,20 +2485,20 @@
                 Vol. 35, Issue 1 (2026) · Published 12 Jun 2026
               </div>
               <div class="article-doi">
-                  <i class="fas fa-link"></i> DOI:
-                  <a href="#">10.1234/jsm.v35i1.003</a>
-                </div>
-                <div class="article-stats">
-                  <span class="article-stat"
-                    ><i class="fas fa-eye"></i> 210 Views</span
-                  >
-                  <span class="article-stat"
-                    ><i class="fas fa-download"></i> 84 Downloads</span
-                  >
-                  <span class="article-stat"
-                    ><i class="fas fa-quote-right"></i> 0 Citations</span
-                  >
-                </div>
+                <i class="fas fa-link"></i> DOI:
+                <a href="#">10.1234/jsm.v35i1.003</a>
+              </div>
+              <div class="article-stats">
+                <span class="article-stat"
+                  ><i class="fas fa-eye"></i> 210 Views</span
+                >
+                <span class="article-stat"
+                  ><i class="fas fa-download"></i> 84 Downloads</span
+                >
+                <span class="article-stat"
+                  ><i class="fas fa-quote-right"></i> 0 Citations</span
+                >
+              </div>
             </div>
             <div class="card-body-push">
               <a href="#" class="card-link" style="font-size: 13px"
@@ -2399,13 +2523,21 @@
                   <span class="announcement-day">15</span
                   ><span class="announcement-month">MAY</span>
                 </div>
-                <div>
+                <div class="announcement-content">
+                  <div class="announcement-meta">
+                    <span>Call for Papers</span>
+                    <span class="announcement-sep">|</span>
+                    <span class="announcement-date-text">15 May 2026</span>
+                  </div>
                   <a href="#" class="announcement-title"
                     >Call for Papers: Special Issue on AI and Governance</a
                   >
-                  <div class="announcement-sub">
-                    Deadline: 30 September 2026
-                  </div>
+                  <p class="announcement-summary">
+                    Deadline: 30 September 2026.
+                  </p>
+                  <a href="#" class="announcement-readmore"
+                    >Read more <i class="fas fa-arrow-right"></i
+                  ></a>
                 </div>
               </div>
               <div class="announcement-item">
@@ -2413,13 +2545,22 @@
                   <span class="announcement-day">02</span
                   ><span class="announcement-month">MAY</span>
                 </div>
-                <div>
+                <div class="announcement-content">
+                  <div class="announcement-meta">
+                    <span>Announcement</span>
+                    <span class="announcement-sep">|</span>
+                    <span class="announcement-date-text">02 May 2026</span>
+                  </div>
                   <a href="#" class="announcement-title"
                     >Scopus Application Update</a
                   >
-                  <div class="announcement-sub">
-                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
-                  </div>
+                  <p class="announcement-summary">
+                    The editorial board has submitted updated Scopus application
+                    materials following recent growth...
+                  </p>
+                  <a href="#" class="announcement-readmore"
+                    >Read more <i class="fas fa-arrow-right"></i
+                  ></a>
                 </div>
               </div>
               <div class="announcement-item">
@@ -2427,13 +2568,22 @@
                   <span class="announcement-day">28</span
                   ><span class="announcement-month">APR</span>
                 </div>
-                <div>
+                <div class="announcement-content">
+                  <div class="announcement-meta">
+                    <span>Conference</span>
+                    <span class="announcement-sep">|</span>
+                    <span class="announcement-date-text">28 Apr 2026</span>
+                  </div>
                   <a href="#" class="announcement-title"
                     >APAG International Conference 2026</a
                   >
-                  <div class="announcement-sub">
-                    Hanoi, Vietnam · 20–21 Nov 2026
-                  </div>
+                  <p class="announcement-summary">
+                    Join scholars and practitioners in Hanoi, Vietnam, 20–21 Nov
+                    2026...
+                  </p>
+                  <a href="#" class="announcement-readmore"
+                    >Read more <i class="fas fa-arrow-right"></i
+                  ></a>
                 </div>
               </div>
               <div class="announcement-item">
@@ -2441,15 +2591,28 @@
                   <span class="announcement-day">10</span
                   ><span class="announcement-month">APR</span>
                 </div>
-                <div>
+                <div class="announcement-content">
+                  <div class="announcement-meta">
+                    <span>Announcement</span>
+                    <span class="announcement-sep">|</span>
+                    <span class="announcement-date-text">10 Apr 2026</span>
+                  </div>
                   <a href="#" class="announcement-title"
                     >Reviewer Acknowledgement 2025</a
                   >
-                  <div class="announcement-sub">
-                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
-                  </div>
+                  <p class="announcement-summary">
+                    The editorial team thanks all reviewers who supported ...
+                  </p>
+                  <a href="#" class="announcement-readmore"
+                    >Read more <i class="fas fa-arrow-right"></i
+                  ></a>
                 </div>
               </div>
+            </div>
+            <div class="card-body-push">
+              <a href="#" class="btn btn-outline btn-block btn-sm"
+                >View All Announcements <i class="fas fa-arrow-right"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -2594,82 +2757,141 @@
     <!-- ============ INDEXING & ABSTRACTING ============ -->
     <section class="indexing-section">
       <div class="container">
-        <div class="indexing-title">Indexing &amp; Abstracting</div>
-        <div class="indexing-row">
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/scopus-icon.jpeg" height="22"
-          /></span>
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/DOAJ-icon.jpeg" height="22" />
-          </span>
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/EBSCO-icon.jpeg" height="22"
-          /></span>
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/ROAD-icon.jpeg" height="22"
-          /></span>
-          <span class="indexing-badge"
-            ><img src="https://cdn.simpleicons.org/googlescholar" height="22" />
-            Google Scholar</span
-          >
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/Dimensions-icon.jpeg" height="22" />
-            Dimensions</span
-          >
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/OpenAIRE-icon.png" height="22"
-          /></span>
+        <!-- <div class="indexing-title">Indexing &amp; Abstracting</div> -->
+        <div class="indexing-group">
+          <div class="indexing-group-title">Current Indexing</div>
+          <div class="indexing-row">
+            <span class="indexing-badge"
+              ><img
+                src="https://cdn.simpleicons.org/googlescholar"
+                height="22"
+              />
+              Google Scholar</span
+            >
+            <span class="indexing-badge"
+              ><img src="/jsm-demo/image/Dimensions-icon.jpeg" height="22" />
+              Dimensions</span
+            >
+            <span class="indexing-badge"
+              ><img
+                src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg"
+                height="22"
+              />
+            </span>
+            <span class="indexing-badge"
+              ><img src="/jsm-demo/image/ROAD-icon.jpeg" height="22"
+            /></span>
+            <span class="indexing-badge"
+              ><img src="/jsm-demo/image/OpenAIRE-icon.png" height="22"
+            /></span>
+            <span class="indexing-badge"
+              ><img src="/jsm-demo/image/DOAJ-icon.jpeg" height="22" />
+            </span>
+          </div>
         </div>
-        <div class="indexing-row">
-          <span class="indexing-badge">Publishing Standards</span>
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/COPE-icon.svg" height="22"
-          /></span>
-          <span class="indexing-badge"
-            ><img
-              src="https://assets.crossref.org/logo/crossref-logo-landscape-200.svg"
-              height="22"
-            />
-          </span>
-          <span class="indexing-badge"
-            ><!-- ORCID -->
-            <img src="https://cdn.simpleicons.org/orcid" height="22" />
-            ORCID</span
-          >
-          <span class="indexing-badge">PKP | PN</span>
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/LOCKSS-icon.jpeg" height="22" /> LOCKSS</span
-          >
-          <span class="indexing-badge"
-            ><img src="/jsm-demo/image/CLOCKSS-icon.jpeg" height="22"
-          /></span>
-          <span class="indexing-badge"
-            ><img
-              src="https://cdn.simpleicons.org/creativecommons"
-              height="22"
-            />
-            Creative Commons</span
-          >
+
+        <div class="indexing-group">
+          <div class="indexing-group-title">Target Indexing</div>
+          <div class="indexing-row">
+            <span class="indexing-badge indexing-badge--target"
+              ><img src="/jsm-demo/image/scopus-icon.jpeg" height="22"
+            /></span>
+            <span class="indexing-badge indexing-badge--target"
+              ><img src="/jsm-demo/image/EBSCO-icon.jpeg" height="22"
+            /></span>
+            <span class="indexing-badge indexing-badge--target"
+              >Publishing Standards</span
+            >
+            <span class="indexing-badge indexing-badge--target"
+              ><img src="/jsm-demo/image/COPE-icon.svg" height="22"
+            /></span>
+
+            <span class="indexing-badge indexing-badge--target"
+              ><!-- ORCID -->
+              <img src="https://cdn.simpleicons.org/orcid" height="22" />
+              ORCID</span
+            >
+            <span class="indexing-badge indexing-badge--target">PKP | PN</span>
+            <span class="indexing-badge indexing-badge--target"
+              ><img src="/jsm-demo/image/LOCKSS-icon.jpeg" height="22" /> LOCKSS</span
+            >
+            <span class="indexing-badge indexing-badge--target"
+              ><img src="/jsm-demo/image/CLOCKSS-icon.jpeg" height="22"
+            /></span>
+            <span class="indexing-badge indexing-badge--target"
+              ><img
+                src="https://cdn.simpleicons.org/creativecommons"
+                height="22"
+              />
+              Creative Commons</span
+            >
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <span>© 2026 Journal of State Management. All rights reserved.</span>
+      <div class="container">
+        <div class="footer-links">
+          <nav class="footer-nav">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms</a>
+            <a href="/accessibility">Accessibility</a>
+            <a href="/contact">Contact</a>
+          </nav>
+          <div class="footer-badges">
+            <a
+              class="footer-badge"
+              href="https://orcid.org"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="icon"
+                src="https://cdn.simpleicons.org/orcid"
+                alt=""
+              />
+              ORCID
+            </a>
+            <a
+              class="footer-badge"
+              href="/crossmark-policy"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg class="icon"><use href="#i-crossmark" /></svg>
+              Crossmark
+            </a>
+            <a
+              class="footer-badge"
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener"
+            >
+              <img class="icon" src="https://cdn.simpleicons.org/rss" alt="" />
+              RSS
+            </a>
+          </div>
         </div>
-        <div class="footer-right">
-          <span>ISSN (Print): 2354-0761</span>
-          <span class="sep">|</span>
-          <span>ISSN (Online): 2734-9991</span>
-          <span class="sep">|</span>
-          <span>Publishing Platform: Open Journal Systems (OJS)</span>
-          <span class="sep">|</span>
-          <span class="footer-pkp"
-            ><svg class="icon"><use href="#i-box" /></svg> PKP</span
-          >
+
+        <div class="footer-inner">
+          <div class="footer-left">
+            <span
+              >© 2026 Journal of State Management. All rights reserved.</span
+            >
+          </div>
+          <div class="footer-right">
+            <span>ISSN (Print): 2815-6021</span>
+            <span class="sep">|</span>
+            <span>ISSN (Online): 2815-6021</span>
+            <span class="sep">|</span>
+            <span>Publishing Platform: Open Journal Systems (OJS)</span>
+            <span class="sep">|</span>
+            <span class="footer-pkp">
+              PKP
+            </span>
+          </div>
         </div>
       </div>
     </footer>
