@@ -1,0 +1,114 @@
+/* ---------- Main nav ---------- */
+.main-nav {
+  background: linear-gradient(
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+}
+.main-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-list {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.nav-item {
+  display: flex;
+  position: relative;
+}
+.nav-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  font-size: 13.8px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  border-bottom: 3px solid transparent;
+  justify-content: space-evenly;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.nav-link .icon {
+  width: 11px;
+  height: 11px;
+  opacity: 0.85;
+}
+.nav-item:hover .nav-link,
+.nav-item.open .nav-link {
+  background: rgba(255, 255, 255, 0.08);
+}
+.nav-item.active .nav-link {
+  border-bottom-color: var(--color-gold);
+  color: #fff;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border-top: 3px solid var(--color-gold);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+  z-index: 80;
+}
+.nav-item.has-dropdown:hover .nav-dropdown,
+.nav-item.open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13.6px;
+  color: var(--color-text);
+  border-radius: 6px;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    padding 0.15s;
+}
+.nav-dropdown li a:hover {
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  padding-left: 18px;
+}
+
+.nav-search-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+.nav-search-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+.nav-search-btn .icon {
+  width: 16px;
+  height: 16px;
+}

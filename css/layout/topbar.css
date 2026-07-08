@@ -1,0 +1,88 @@
+.top-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+}
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-mark {
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.brand-mark .icon {
+  width: 22px;
+  height: 22px;
+}
+.brand-text-title {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.brand-text-line1 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.brand-text-line2 {
+  font-size: 11.5px;
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+.utility-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.utility-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.utility-link:hover {
+  color: var(--color-primary);
+}
+.utility-link .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.divider-v {
+  width: 1px;
+  height: 20px;
+  background: var(--color-border-strong);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 4px;
+}
+.mobile-toggle .icon {
+  width: 26px;
+  height: 26px;
+}

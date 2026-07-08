@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/history.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="hi-wrap">
+          <div class="hi-header">
+            <i class="ti ti-clock-history" aria-hidden="true"></i>
+            <p class="hi-header-title">History</p>
+          </div>
+
+          <!-- Intro -->
+          <div class="hi-intro">
+            <p>
+              The
+              <strong style="color: #0a1e3d"
+                >Journal of State Management</strong
+              >
+              traces its origin to the long-standing academic tradition
+              established in 1993 as the official scholarly publication of the
+              Academy of Public Administration and Governance. For more than
+              three decades, the Journal has served as one of Vietnam's leading
+              academic forums for research and policy discussion in public
+              administration, administrative reform, and state governance.
+            </p>
+            <p>
+              Recognizing the growing demand for international scholarly
+              communication, the Academy launched the English-language
+              <strong style="color: #0a1e3d"
+                >Journal of State Management (JSM)</strong
+              >
+              to expand the global visibility of Vietnamese scholarship while
+              fostering international academic exchange. The establishment of
+              JSM marks an important milestone in the Journal's
+              internationalization strategy and reflects its commitment to
+              publishing high-quality research that addresses governance
+              challenges across different institutional, political, and cultural
+              contexts.
+            </p>
+            <p>
+              Today, JSM continues to develop as an international academic
+              journal by strengthening editorial standards, expanding its
+              international editorial board, improving digital publishing
+              infrastructure, adopting global publication ethics, and pursuing
+              inclusion in leading international abstracting and indexing
+              databases.
+            </p>
+          </div>
+
+          <!-- Milestones -->
+          <div class="hi-section">
+            <div class="hi-section-hdr">
+              <i class="ti ti-flag" aria-hidden="true"></i>
+              <span class="hi-section-title">Milestones</span>
+            </div>
+            <div class="hi-section-body">
+              <div class="hi-timeline">
+                <div class="hi-milestone">
+                  <div class="hi-year-col">
+                    <span class="hi-year-badge">1993</span>
+                  </div>
+                  <div class="hi-content">
+                    <p class="hi-milestone-title">
+                      Journal of State Management established
+                    </p>
+                    <p class="hi-milestone-desc">
+                      Founded as the official scholarly publication of the
+                      Academy of Public Administration and Governance, Vietnam.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hi-milestone">
+                  <div class="hi-year-col">
+                    <span class="hi-year-badge">2022</span>
+                  </div>
+                  <div class="hi-content">
+                    <p class="hi-milestone-title">
+                      English-language Journal of State Management (JSM)
+                      launched
+                    </p>
+                    <p class="hi-milestone-desc">
+                      ISSN 2815-6021 assigned. Marking the journal's
+                      internationalization strategy to connect global scholars
+                      and practitioners.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hi-milestone">
+                  <div class="hi-year-col">
+                    <span class="hi-year-badge">2024</span>
+                  </div>
+                  <div class="hi-content">
+                    <p class="hi-milestone-title">
+                      Crossref DOI registration implemented
+                    </p>
+                    <p class="hi-milestone-desc">
+                      All accepted articles are assigned permanent Crossref DOIs
+                      to ensure global discoverability and long-term citation
+                      tracking.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hi-milestone">
+                  <div class="hi-year-col">
+                    <span class="hi-year-badge">2025</span>
+                  </div>
+                  <div class="hi-content">
+                    <p class="hi-milestone-title">
+                      Enhanced international editorial policies and publication
+                      ethics adopted
+                    </p>
+                    <p class="hi-milestone-desc">
+                      Comprehensive update of editorial standards, peer review
+                      processes, and publication ethics in alignment with
+                      international best practices.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hi-milestone">
+                  <div class="hi-year-col">
+                    <span class="hi-year-badge future">Future</span>
+                  </div>
+                  <div class="hi-content">
+                    <p class="hi-milestone-title">
+                      Scopus, DOAJ, and other international indexing databases
+                    </p>
+                    <p class="hi-milestone-desc">
+                      Targeting inclusion in leading international abstracting
+                      and indexing databases to further expand the journal's
+                      global academic reach.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/layout/new-topbar.html");
+        await include("nav", "/layout/new-nav.html");
+        await include("indexing", "/layout/new-indexing.html");
+        await include("footer", "/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "About") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

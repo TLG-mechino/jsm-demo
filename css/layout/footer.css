@@ -1,0 +1,92 @@
+/* =========================================================
+     FOOTER
+  ========================================================= */
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 24px 0;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 12.5px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  color: var(--color-footer-text);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.footer-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.footer-badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+.footer-badge:hover {
+  opacity: 1;
+}
+.footer-badge .icon {
+  width: 14px;
+  height: 14px;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 12.5px;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-inner .sep {
+  opacity: 0.4;
+}
+.footer-pkp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-pkp .icon {
+  width: 14px;
+  height: 14px;
+}

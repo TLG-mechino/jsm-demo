@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/governing-institution.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-building-community" aria-hidden="true"></i>
+            <p class="gi-header-title">Governing Institution</p>
+          </div>
+
+          <!-- Identity + intro -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-school" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Academy of Public Administration and Governance (APAG)</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-identity">
+                <div class="gi-logo">
+                  <i class="ti ti-building-bank" aria-hidden="true"></i>
+                </div>
+                <div class="gi-name-block">
+                  <span class="gi-abbr">APAG</span>
+                  <p class="gi-fullname">
+                    Academy of Public Administration and Governance
+                  </p>
+                  <p class="gi-sub">
+                    Constituent institution of the Ho Chi Minh National Academy
+                    of Politics
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                The
+                <strong style="color: #0a1e3d"
+                  >Academy of Public Administration and Governance
+                  (APAG)</strong
+                >
+                is Vietnam's leading higher education and research institution
+                specializing in public administration, governance, public
+                policy, and leadership development. As a constituent institution
+                of the
+                <strong style="color: #0a1e3d"
+                  >Ho Chi Minh National Academy of Politics</strong
+                >, APAG plays a central role in educating senior public
+                officials, conducting policy research, and providing strategic
+                consultation for governmental reform and national development.
+              </p>
+              <p>
+                With decades of experience in education, research, and
+                international cooperation, APAG has established partnerships
+                with universities, research institutes, governmental
+                organizations, and international development agencies across
+                Asia, Europe, North America, and Australia.
+              </p>
+              <p>
+                The Journal of State Management represents APAG's international
+                academic publishing initiative, supporting the dissemination of
+                rigorous research that contributes to better governance,
+                effective public administration, and sustainable development.
+              </p>
+            </div>
+          </div>
+
+          <!-- APAG at a Glance -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">APAG at a Glance</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-glance-grid">
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-calendar"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Established</span
+                  >
+                  <span class="gi-glance-value">1959</span>
+                </div>
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-map-pin"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Location</span
+                  >
+                  <span class="gi-glance-value">Hanoi, Vietnam</span>
+                </div>
+                <div class="gi-glance-item full">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-building"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Governing Body</span
+                  >
+                  <span class="gi-glance-value"
+                    >Ho Chi Minh National Academy of Politics</span
+                  >
+                </div>
+              </div>
+
+              <div class="gi-divider"></div>
+
+              <p
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  color: #0a1e3d;
+                  margin: 0 0 8px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                "
+              >
+                Main Areas
+              </p>
+              <div class="gi-areas">
+                <span class="gi-area-tag"
+                  ><i class="ti ti-building-arch"></i> Public
+                  Administration</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-file-description"></i> Public Policy</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-shield-check"></i> Governance</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-users"></i> Leadership Development</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-refresh"></i> Administrative Reform</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-bulb"></i> Public Sector Innovation</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/layout/new-topbar.html");
+        await include("nav", "/layout/new-nav.html");
+        await include("indexing", "/layout/new-indexing.html");
+        await include("footer", "/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "About") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
