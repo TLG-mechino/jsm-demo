@@ -394,10 +394,10 @@
         document.getElementById(id).innerHTML = await response.text();
       }
       async function init() {
-        await include("topbar", "/layout/new-topbar.html");
-        await include("nav", "/layout/new-nav.html");
-        await include("indexing", "/layout/new-indexing.html");
-        await include("footer", "/layout/new-footer.html");
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
 
         setActiveMenu();
       }
