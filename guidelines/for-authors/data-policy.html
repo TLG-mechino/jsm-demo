@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/data-policy.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="rd-wrap">
+          <div class="rd-header">
+            <i class="ti ti-database" aria-hidden="true"></i>
+            <p class="rd-header-title">Research Data Policy</p>
+          </div>
+
+          <!-- Intro -->
+          <div class="rd-section">
+            <div class="rd-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="rd-section-title">Overview</span>
+            </div>
+            <div class="rd-section-body">
+              <p>
+                JSM encourages
+                <strong style="color: #0a1e3d"
+                  >transparency and reproducibility</strong
+                >
+                in research. Authors are expected to support open science
+                principles by making research data available in accessible and
+                reusable formats wherever possible.
+              </p>
+            </div>
+          </div>
+
+          <!-- Practices -->
+          <div class="rd-section">
+            <div class="rd-section-hdr">
+              <i class="ti ti-checklist" aria-hidden="true"></i>
+              <span class="rd-section-title">Authors are encouraged to</span>
+            </div>
+            <div class="rd-section-body">
+              <div class="rd-practices">
+                <div class="rd-practice-item">
+                  <div class="rd-practice-icon">
+                    <i class="ti ti-database-import" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div class="rd-practice-text">
+                      Deposit research data in trusted repositories
+                    </div>
+                    <div class="rd-practice-sub">
+                      e.g. Zenodo, Figshare, Dryad, or institutional
+                      repositories
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rd-practice-item">
+                  <div class="rd-practice-icon">
+                    <i class="ti ti-file-description" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div class="rd-practice-text">
+                      Provide a Data Availability Statement
+                    </div>
+                    <div class="rd-practice-sub">
+                      Clearly describe where and how the data can be accessed
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rd-practice-item">
+                  <div class="rd-practice-icon">
+                    <i class="ti ti-link" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div class="rd-practice-text">
+                      Cite datasets appropriately
+                    </div>
+                    <div class="rd-practice-sub">
+                      Include DOIs or permanent links when referencing datasets
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rd-practice-item">
+                  <div class="rd-practice-icon">
+                    <i class="ti ti-code" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div class="rd-practice-text">
+                      Share code where possible
+                    </div>
+                    <div class="rd-practice-sub">
+                      Scripts and analysis code improve reproducibility and
+                      transparency
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rd-practice-item">
+                  <div class="rd-practice-icon">
+                    <i class="ti ti-lock" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div class="rd-practice-text">
+                      Explain any restrictions on data access
+                    </div>
+                    <div class="rd-practice-sub">
+                      State reasons clearly if full data sharing is not possible
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exceptions -->
+          <div class="rd-section">
+            <div class="rd-section-hdr">
+              <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+              <span class="rd-section-title">Exceptions</span>
+            </div>
+            <div class="rd-section-body">
+              <div class="rd-note">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <p class="rd-note-text">
+                  Where data cannot be shared due to <strong>legal</strong>,
+                  <strong>ethical</strong>, or
+                  <strong>confidentiality</strong> reasons, authors should
+                  clearly state the justification in the Data Availability
+                  Statement. The editorial team will review such cases on an
+                  individual basis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "For Authors") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

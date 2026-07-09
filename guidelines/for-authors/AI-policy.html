@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/AI-policy.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-robot" aria-hidden="true"></i>
+            <p class="gi-header-title">Artificial Intelligence (AI) Policy</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                JSM recognizes the increasing use of artificial intelligence
+                technologies in scholarly communication.
+              </p>
+              <div class="gi-callout-ok">
+                <i class="ti ti-circle-check" aria-hidden="true"></i>
+                <span class="gi-callout-ok-text">
+                  Authors may use AI-assisted tools solely to improve language,
+                  grammar, readability, or formatting.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rules -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-shield-check" aria-hidden="true"></i>
+              <span class="gi-section-title">Rules &amp; Requirements</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-rule-list">
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon warn"><i class="ti ti-x"></i></div>
+                  <div class="gi-rule-text">
+                    AI systems cannot be listed as authors
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-user-check"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    Authors remain fully responsible for the accuracy and
+                    originality of their work
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-eye-check"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    AI-generated text, images, tables, or analytical outputs
+                    must be disclosed
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon warn"><i class="ti ti-x"></i></div>
+                  <div class="gi-rule-text">
+                    AI tools may not fabricate data, references, or research
+                    findings
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-file-description"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    Authors should include a declaration describing any
+                    significant use of AI technologies
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Office note -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-briefcase" aria-hidden="true"></i>
+              <span class="gi-section-title">Editorial Review</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout">
+                <i class="ti ti-alert-circle" aria-hidden="true"></i>
+                <span class="gi-callout-text">
+                  The Editorial Office may request additional information
+                  regarding AI use during manuscript assessment.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "For Authors") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

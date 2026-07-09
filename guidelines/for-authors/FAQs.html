@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/FAQs.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-help-circle" aria-hidden="true"></i>
+            <p class="gi-header-title">FAQs</p>
+          </div>
+
+          <div class="gi-faq open" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text">How do I submit a manuscript?</span>
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                All manuscripts must be submitted through the Journal's online
+                submission system.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text"
+                >Is there an Article Processing Charge (APC)?</span
+              >
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                No. JSM does not charge authors any fees for submission or
+                publication.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text">How long does peer review take?</span>
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                The average time to the first editorial decision is typically
+                6–8 weeks, although this may vary depending on reviewer
+                availability and manuscript complexity.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text"
+                >Can I submit a manuscript that has been posted as a
+                preprint?</span
+              >
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                Yes, provided that authors disclose the existence of the
+                preprint and the manuscript is not under review elsewhere.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text"
+                >Does the Journal accept supplementary materials?</span
+              >
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                Yes. Authors may submit datasets, appendices, multimedia files,
+                questionnaires, software code, and other supplementary
+                materials.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text">May I recommend reviewers?</span>
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                Yes. Authors may suggest potential reviewers. However, the final
+                selection of reviewers is made solely by the Editor-in-Chief or
+                the handling Associate Editor.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-faq" data-faq>
+            <div class="gi-faq-q" data-faq-toggle>
+              <div class="gi-faq-q-icon">
+                <i class="ti ti-question-mark"></i>
+              </div>
+              <span class="gi-faq-q-text">What happens after acceptance?</span>
+              <i class="ti ti-chevron-down gi-faq-chevron"></i>
+            </div>
+            <div class="gi-faq-a-wrap">
+              <div class="gi-faq-a">
+                Accepted manuscripts undergo professional copyediting, language
+                editing, typesetting, author proof review, DOI registration, and
+                online publication before assignment to a scheduled issue.
+              </div>
+            </div>
+          </div>
+
+          <div class="gi-note">
+            <i class="ti ti-info-circle" aria-hidden="true"></i>
+            <span>Tap any question to expand or collapse its answer.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "For Authors") {
+            item.classList.add("active");
+          }
+        });
+
+        document.querySelectorAll("[data-faq-toggle]").forEach(function (q) {
+          q.addEventListener("click", function () {
+            var faq = q.closest("[data-faq]");
+            faq.classList.toggle("open");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

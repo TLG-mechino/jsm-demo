@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/APC-policy.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-receipt-2" aria-hidden="true"></i>
+            <p class="gi-header-title">APC Policy</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout-ok">
+                <i class="ti ti-circle-check" aria-hidden="true"></i>
+                <span class="gi-callout-ok-text">
+                  JSM does not charge any fees to authors at any stage of the
+                  publication process.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fee breakdown -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-list-check" aria-hidden="true"></i>
+              <span class="gi-section-title">Specifically</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-fee-list">
+                <div class="gi-fee-item">
+                  <div class="gi-fee-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-fee-text">No manuscript submission fees</div>
+                  <span class="gi-fee-tag">FREE</span>
+                </div>
+                <div class="gi-fee-item">
+                  <div class="gi-fee-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-fee-text">
+                    No article processing charges (APCs)
+                  </div>
+                  <span class="gi-fee-tag">FREE</span>
+                </div>
+                <div class="gi-fee-item">
+                  <div class="gi-fee-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-fee-text">No peer-review fees</div>
+                  <span class="gi-fee-tag">FREE</span>
+                </div>
+                <div class="gi-fee-item">
+                  <div class="gi-fee-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-fee-text">No publication fees</div>
+                  <span class="gi-fee-tag">FREE</span>
+                </div>
+                <div class="gi-fee-item">
+                  <div class="gi-fee-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-fee-text">
+                    No fees for online access to published articles
+                  </div>
+                  <span class="gi-fee-tag">FREE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commitment -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-scale" aria-hidden="true"></i>
+              <span class="gi-section-title">Our Commitment</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                The journal is supported by the Academy of Public Administration
+                and Governance and is committed to maintaining equitable
+                opportunities for authors regardless of institutional
+                affiliation, geographic location, or research funding
+                availability.
+              </p>
+
+              <div class="gi-glance-grid">
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-building-bank"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Supported By</span
+                  >
+                  <span class="gi-glance-value"
+                    >Academy of Public Administration and Governance</span
+                  >
+                </div>
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-scale"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Access Policy</span
+                  >
+                  <span class="gi-glance-value"
+                    >Equitable, Regardless of Funding</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "For Authors") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
