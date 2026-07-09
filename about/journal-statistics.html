@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/journal-statistics.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <!-- Journal Statistics header -->
+          <div class="gi-header">
+            <i class="ti ti-chart-bar" aria-hidden="true"></i>
+            <p class="gi-header-title">Journal Statistics</p>
+          </div>
+
+          <!-- Editorial Performance -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-report-analytics" aria-hidden="true"></i>
+              <span class="gi-section-title">Editorial Performance</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                To promote transparency and accountability, the Journal of State
+                Management regularly reports key editorial performance
+                indicators.
+              </p>
+              <div class="gi-kv-list">
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Publication Frequency</span>
+                  <span class="gi-kv-val">4 Issues per Year</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Peer Review Model</span>
+                  <span class="gi-kv-val">Double-blind</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Avg. Reviewers per Paper</span>
+                  <span class="gi-kv-val">Minimum Two</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">DOI Registration</span>
+                  <span class="gi-kv-val">Crossref</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Open Access</span>
+                  <span class="gi-kv-val"
+                    >Yes<span class="gi-badge">Free to Read</span></span
+                  >
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">APC</span>
+                  <span class="gi-kv-val"
+                    >None<span class="gi-badge">No Charge</span></span
+                  >
+                </div>
+              </div>
+
+              <div class="gi-divider"></div>
+
+              <div class="gi-glance-grid">
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-users-group"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Reviewers</span
+                  >
+                  <span class="gi-glance-value">2+ per Paper</span>
+                </div>
+                <div class="gi-glance-item">
+                  <span class="gi-glance-label"
+                    ><i
+                      class="ti ti-receipt-2"
+                      style="font-size: 11px; margin-right: 3px"
+                    ></i
+                    >Author Fees</span
+                  >
+                  <span class="gi-glance-value">None</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "About") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/contact-about.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-mail" aria-hidden="true"></i>
+            <p class="gi-header-title">Contact Editorial Office</p>
+          </div>
+
+          <!-- Journal / Publisher identity -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-building" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Journal of State Management (JSM)</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-identity">
+                <div class="gi-logo">
+                  <i class="ti ti-building-bank" aria-hidden="true"></i>
+                </div>
+                <div class="gi-name-block">
+                  <span class="gi-abbr">JSM</span>
+                  <p class="gi-fullname">
+                    Academy of Public Administration and Governance
+                  </p>
+                  <p class="gi-sub">
+                    Publisher of the Journal of State Management
+                  </p>
+                </div>
+              </div>
+
+              <div class="gi-address">
+                <i class="ti ti-map-pin" aria-hidden="true"></i>
+                <div class="gi-address-text">
+                  <strong>Editorial Office Address</strong>
+                  77 Nguyen Chi Thanh Street<br />
+                  Dong Da District, Hanoi 100000<br />
+                  Vietnam
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Correspondence -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-address-book" aria-hidden="true"></i>
+              <span class="gi-section-title">Editorial Correspondence</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-kv-list">
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Email</span>
+                  <span class="gi-kv-val"
+                    ><a href="mailto:jsm@quanlynhanuoc.vn"
+                      >jsm@quanlynhanuoc.vn</a
+                    ></span
+                  >
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Website</span>
+                  <span class="gi-kv-val"
+                    ><a
+                      href="https://jsm.quanlynhanuoc.vn"
+                      target="_blank"
+                      rel="noopener"
+                      >jsm.quanlynhanuoc.vn</a
+                    ></span
+                  >
+                </div>
+              </div>
+              <div class="gi-note">
+                <i class="ti ti-alert-circle" aria-hidden="true"></i>
+                <span
+                  >Please replace with JSM's official email address if it
+                  differs from the one shown above.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Office Hours -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-clock" aria-hidden="true"></i>
+              <span class="gi-section-title">Office Hours</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-kv-list">
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Days</span>
+                  <span class="gi-kv-val">Monday – Friday</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Hours</span>
+                  <span class="gi-kv-val"
+                    >08:00 – 17:00<span class="gi-badge">GMT+7</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- General Enquiries -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-help-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">General Enquiries</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                For questions regarding manuscript submission, editorial
+                policies, peer review, publication ethics, or indexing, please
+                contact the Editorial Office. The editorial team aims to respond
+                to all enquiries within
+                <strong style="color: #0a1e3d"
+                  >two to three business days</strong
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "About") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
