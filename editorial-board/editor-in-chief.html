@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/editor-in-chief.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-user-star" aria-hidden="true"></i>
+            <p class="gi-header-title">Editor-in-Chief</p>
+          </div>
+
+          <!-- Role overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-shield-star" aria-hidden="true"></i>
+              <span class="gi-section-title">Role Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                The Editor-in-Chief provides the overall academic leadership of
+                the Journal and is responsible for maintaining editorial
+                quality, publication ethics, and strategic development. Working
+                closely with the
+                <strong style="color: #0a1e3d">Editorial Board</strong> and the
+                <strong style="color: #0a1e3d">Editorial Office</strong>, the
+                Editor-in-Chief ensures that every published article meets the
+                Journal's standards of originality, methodological rigor, and
+                scholarly contribution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Responsibilities -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-checklist" aria-hidden="true"></i>
+              <span class="gi-section-title">Responsibilities</span>
+            </div>
+            <div class="gi-section-body">
+              <p>The Editor-in-Chief is responsible for:</p>
+              <div class="gi-sub-list">
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-compass"></i></div>
+                  <div class="gi-sub-text">
+                    Defining the Journal's editorial vision and strategic
+                    direction
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-gavel"></i></div>
+                  <div class="gi-sub-text">
+                    Making final editorial decisions on all submitted
+                    manuscripts
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-scale"></i></div>
+                  <div class="gi-sub-text">
+                    Ensuring an independent, fair, and transparent peer review
+                    process
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot">
+                    <i class="ti ti-users-group"></i>
+                  </div>
+                  <div class="gi-sub-text">
+                    Appointing members of the Editorial Board and reviewers
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot">
+                    <i class="ti ti-shield-check"></i>
+                  </div>
+                  <div class="gi-sub-text">
+                    Upholding publication ethics in accordance with COPE
+                    Principles
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-world"></i></div>
+                  <div class="gi-sub-text">
+                    Promoting the international visibility and academic
+                    reputation of JSM
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-handshake"></i></div>
+                  <div class="gi-sub-text">
+                    Developing collaborations with scholars, institutions, and
+                    professional associations worldwide
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editor-in-Chief profile -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-id-badge-2" aria-hidden="true"></i>
+              <span class="gi-section-title">Editor-in-Chief</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-identity">
+                <div class="gi-avatar">
+                  <i class="ti ti-user" aria-hidden="true"></i>
+                </div>
+                <div class="gi-name-block">
+                  <span class="gi-abbr">EDITOR-IN-CHIEF</span>
+                  <p class="gi-fullname">Dr. Nguyễn Quang Vinh</p>
+                  <p class="gi-sub">
+                    Academy of Public Administration and Governance, Vietnam
+                  </p>
+                </div>
+              </div>
+
+              <div class="gi-divider"></div>
+
+              <div class="gi-kv-list">
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">ORCID</span>
+                  <span class="gi-kv-val"
+                    ><a
+                      href="https://orcid.org/0009-0008-4155-3708"
+                      target="_blank"
+                      rel="noopener"
+                      >orcid.org/0009-0008-4155-3708</a
+                    ></span
+                  >
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Email</span>
+                  <span class="gi-kv-val"
+                    ><a href="mailto:Vinhnq@apag.edu.vn"
+                      >Vinhnq@apag.edu.vn</a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Editorial Board") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
