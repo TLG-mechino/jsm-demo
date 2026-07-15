@@ -26,8 +26,334 @@
             <p class="ct-header-title">Contact</p>
           </div>
 
-          <!-- FAQ -->
-          <!-- <div class="ct-section">
+          <!-- THÊM MỚI: thanh chuyển form -->
+          <div class="ct-tabs" role="tablist">
+            <button
+              class="ct-tab active"
+              type="button"
+              data-target="panel-form-1"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="ti ti-message-question"></i> Information
+            </button>
+            <button
+              class="ct-tab"
+              type="button"
+              data-target="panel-form-2"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="ti ti-forms"></i> Send to Us
+            </button>
+          </div>
+
+          <div class="ct-panel" id="panel-form-1">
+            <!-- Overview -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span class="gi-section-title">Overview</span>
+              </div>
+              <div class="gi-section-body">
+                <p>
+                  The Editorial Office of the Journal of State Management (JSM)
+                  welcomes enquiries from authors, reviewers, readers,
+                  librarians, institutions, and members of the academic
+                  community.
+                </p>
+                <p>
+                  Please use the contact information below for questions
+                  regarding manuscript submission, editorial policies, peer
+                  review, publication ethics, indexing, subscriptions, or
+                  general enquiries.
+                </p>
+                <div class="gi-callout">
+                  <i class="ti ti-clock" aria-hidden="true"></i>
+                  <span class="gi-callout-text"
+                    >The Editorial Office is committed to providing timely and
+                    professional assistance.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Editorial Office -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-building" aria-hidden="true"></i>
+                <span class="gi-section-title">Editorial Office</span>
+              </div>
+              <div class="gi-section-body">
+                <div class="gi-identity">
+                  <div class="gi-logo">
+                    <i class="ti ti-building-bank" aria-hidden="true"></i>
+                  </div>
+                  <div class="gi-name-block">
+                    <span class="gi-abbr">JSM</span>
+                    <p class="gi-fullname">Journal of State Management</p>
+                    <p class="gi-sub">
+                      Academy of Public Administration and Governance
+                    </p>
+                  </div>
+                </div>
+                <div class="gi-address">
+                  <i class="ti ti-map-pin" aria-hidden="true"></i>
+                  <div class="gi-address-text">
+                    <strong>Editorial Office Address</strong>
+                    77 Nguyen Chi Thanh Street<br />
+                    Giang Vo District, Hanoi 100000<br />
+                    Vietnam
+                  </div>
+                </div>
+
+                <div class="gi-divider"></div>
+
+                <div class="gi-kv-list">
+                  <div class="gi-kv-row">
+                    <span class="gi-kv-key">Email</span>
+                    <span class="gi-kv-val"
+                      ><a href="mailto:jsm@quanlynhanuoc.vn"
+                        >jsm@quanlynhanuoc.vn</a
+                      ></span
+                    >
+                  </div>
+                  <div class="gi-kv-row">
+                    <span class="gi-kv-key">Website</span>
+                    <span class="gi-kv-val"
+                      ><a
+                        href="https://jsm.quanlynhanuoc.vn"
+                        target="_blank"
+                        rel="noopener"
+                        >jsm.quanlynhanuoc.vn</a
+                      ></span
+                    >
+                  </div>
+                  <div class="gi-kv-row">
+                    <span class="gi-kv-key">Office Hours</span>
+                    <span class="gi-kv-val"
+                      >Monday – Friday<span class="gi-badge"
+                        >08:00–17:00 GMT+7</span
+                      ></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Department contacts -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-users-group" aria-hidden="true"></i>
+                <span class="gi-section-title">Department Contacts</span>
+              </div>
+              <div class="gi-section-body">
+                <div class="gi-dept-card" style="margin-bottom: 10px">
+                  <div class="gi-dept-hdr">
+                    <div class="gi-dept-icon">
+                      <i class="ti ti-file-text"></i>
+                    </div>
+                    <div class="gi-dept-title">
+                      Manuscript Enquiries — Managing Editor
+                    </div>
+                  </div>
+                  <div class="gi-dept-topics">
+                    <span class="gi-dept-topic-tag">Manuscript submission</span>
+                    <span class="gi-dept-topic-tag">Peer review</span>
+                    <span class="gi-dept-topic-tag">Revisions</span>
+                    <span class="gi-dept-topic-tag">Editorial decisions</span>
+                    <span class="gi-dept-topic-tag">Publication schedule</span>
+                  </div>
+                  <a class="gi-dept-email" href="mailto:hanhdtm@apag.edu.vn"
+                    ><i class="ti ti-mail"></i>hanhdtm@apag.edu.vn</a
+                  >
+                </div>
+
+                <div class="gi-dept-card" style="margin-bottom: 10px">
+                  <div class="gi-dept-hdr">
+                    <div class="gi-dept-icon">
+                      <i class="ti ti-shield-check"></i>
+                    </div>
+                    <div class="gi-dept-title">
+                      Publication Ethics — Research Integrity Office
+                    </div>
+                  </div>
+                  <div class="gi-dept-topics">
+                    <span class="gi-dept-topic-tag">Publication ethics</span>
+                    <span class="gi-dept-topic-tag">Plagiarism</span>
+                    <span class="gi-dept-topic-tag">Authorship disputes</span>
+                    <span class="gi-dept-topic-tag">Corrections</span>
+                    <span class="gi-dept-topic-tag">Retractions</span>
+                    <span class="gi-dept-topic-tag"
+                      >Complaints and appeals</span
+                    >
+                  </div>
+                  <a class="gi-dept-email" href="mailto:vanntt@apag.edu.vn"
+                    ><i class="ti ti-mail"></i>vanntt@apag.edu.vn</a
+                  >
+                </div>
+
+                <div class="gi-dept-card">
+                  <div class="gi-dept-hdr">
+                    <div class="gi-dept-icon">
+                      <i class="ti ti-headset"></i>
+                    </div>
+                    <div class="gi-dept-title">Technical Support</div>
+                  </div>
+                  <div class="gi-dept-topics">
+                    <span class="gi-dept-topic-tag">Online submission</span>
+                    <span class="gi-dept-topic-tag">Website access</span>
+                    <span class="gi-dept-topic-tag">Author accounts</span>
+                    <span class="gi-dept-topic-tag">Reviewer accounts</span>
+                    <span class="gi-dept-topic-tag">Technical issues</span>
+                  </div>
+                  <a class="gi-dept-email" href="mailto:vuongtt@apag.edu.vn"
+                    ><i class="ti ti-mail"></i>vuongtt@apag.edu.vn</a
+                  >
+                </div>
+
+                <div class="gi-note">
+                  <i class="ti ti-info-circle" aria-hidden="true"></i>
+                  <span
+                    >Office Hours: Monday – Friday, 08:00–17:00 (GMT+7). The
+                    Editorial Office is closed on weekends and official public
+                    holidays in Vietnam.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-clock" aria-hidden="true"></i>
+                <span class="gi-section-title">Response Time</span>
+              </div>
+              <div class="gi-section-body" style="padding: 0">
+                <div style="padding: 1.25rem 1.5rem 0.5rem">
+                  <p style="margin: 0">
+                    The Journal aims to respond to enquiries within the
+                    following timeframes:
+                  </p>
+                </div>
+                <div style="padding: 0 1.5rem 1.25rem">
+                  <table class="gi-table">
+                    <thead>
+                      <tr>
+                        <th>Type of Enquiry</th>
+                        <th>Target Response Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>General enquiries</td>
+                        <td class="rtime">Within 2 business days</td>
+                      </tr>
+                      <tr>
+                        <td>Manuscript enquiries</td>
+                        <td class="rtime">Within 3 business days</td>
+                      </tr>
+                      <tr>
+                        <td>Technical support</td>
+                        <td class="rtime">Within 1 business day</td>
+                      </tr>
+                      <tr>
+                        <td>Publication ethics enquiries</td>
+                        <td class="rtime">Within 5 business days</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="gi-note">
+                    <i class="ti ti-info-circle" aria-hidden="true"></i>
+                    <span
+                      >Response times may vary during public holidays or periods
+                      of exceptionally high submission volume.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Connect With Us -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-share" aria-hidden="true"></i>
+                <span class="gi-section-title">Connect With Us</span>
+              </div>
+              <div class="gi-section-body">
+                <p>
+                  Readers and authors are encouraged to follow JSM through its
+                  official communication channels for announcements, newly
+                  published articles, calls for papers, and editorial news.
+                </p>
+                <div class="gi-areas">
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-world"></i> Journal Website</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-mail"></i> Email Newsletter</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-brand-facebook"></i> Facebook</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-brand-linkedin"></i> LinkedIn</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-brand-x"></i> X (formerly Twitter)</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-brand-youtube"></i> YouTube
+                    (Webinars)</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-fingerprint"></i> ORCID</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-affiliate"></i> Crossref</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Visit the Editorial Office -->
+            <div class="gi-section">
+              <div class="gi-section-hdr">
+                <i class="ti ti-calendar-event" aria-hidden="true"></i>
+                <span class="gi-section-title">Visit the Editorial Office</span>
+              </div>
+              <div class="gi-section-body">
+                <p>
+                  Visitors wishing to meet members of the Editorial Office are
+                  kindly requested to schedule an appointment in advance by
+                  email.
+                </p>
+                <p>Appointments may be arranged for:</p>
+                <div class="gi-areas">
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-message-2"></i> Editorial
+                    consultations</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-handshake"></i> Publishing
+                    cooperation</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-school"></i> Academic partnerships</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-building"></i> Institutional visits</span
+                  >
+                  <span class="gi-area-tag"
+                    ><i class="ti ti-camera"></i> Media enquiries</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ct-panel" id="panel-form-2" hidden>
+            <!-- FAQ -->
+            <!-- <div class="ct-section">
             <div class="ct-section-hdr">
               <i class="ti ti-help-circle" aria-hidden="true"></i>
               <span class="ct-section-title">Most Viewed Answers</span>
@@ -67,421 +393,426 @@
             </div>
           </div> -->
 
-          <!-- Your Role -->
-          <div class="ct-section">
-            <div class="ct-section-hdr">
-              <i class="ti ti-user-circle" aria-hidden="true"></i>
-              <span class="ct-section-title">Your Role</span>
-            </div>
-            <div class="ct-section-body">
-              <div class="ct-role-group" id="roleGroup">
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="administrator" /><i
-                    class="ti ti-building"
-                  ></i>
-                  Administrator / Librarian</label
-                >
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="author" /><i
-                    class="ti ti-pencil"
-                  ></i>
-                  Author</label
-                >
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="editor" /><i
-                    class="ti ti-edit"
-                  ></i>
-                  Editor</label
-                >
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="publisher" /><i
-                    class="ti ti-printer"
-                  ></i>
-                  Publisher</label
-                >
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="user" /><i
-                    class="ti ti-user"
-                  ></i>
-                  User</label
-                >
-                <label class="ct-role-pill"
-                  ><input type="radio" name="role" value="other" /><i
-                    class="ti ti-dots-circle-horizontal"
-                  ></i>
-                  Other</label
-                >
+            <!-- Your Role -->
+            <div class="ct-section">
+              <div class="ct-section-hdr">
+                <i class="ti ti-user-circle" aria-hidden="true"></i>
+                <span class="ct-section-title">Your Role</span>
+              </div>
+              <div class="ct-section-body">
+                <div class="ct-role-group" id="roleGroup">
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="administrator" /><i
+                      class="ti ti-building"
+                    ></i>
+                    Administrator / Librarian</label
+                  >
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="author" /><i
+                      class="ti ti-pencil"
+                    ></i>
+                    Author</label
+                  >
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="editor" /><i
+                      class="ti ti-edit"
+                    ></i>
+                    Editor</label
+                  >
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="publisher" /><i
+                      class="ti ti-printer"
+                    ></i>
+                    Publisher</label
+                  >
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="user" /><i
+                      class="ti ti-user"
+                    ></i>
+                    User</label
+                  >
+                  <label class="ct-role-pill"
+                    ><input type="radio" name="role" value="other" /><i
+                      class="ti ti-dots-circle-horizontal"
+                    ></i>
+                    Other</label
+                  >
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Question -->
-          <div class="ct-section">
-            <div class="ct-section-hdr">
-              <i class="ti ti-message-question" aria-hidden="true"></i>
-              <span class="ct-section-title">Your Question</span>
-            </div>
-            <div class="ct-section-body">
-              <div style="display: flex; flex-direction: column; gap: 14px">
-                <div class="ct-field">
-                  <label class="ct-label" for="subject">Subject</label>
-                  <input
-                    class="ct-input"
-                    type="text"
-                    id="subject"
-                    placeholder="Enter the subject of your question"
-                  />
-                </div>
-
-                <div class="ct-field">
-                  <label class="ct-label" for="question">Your question</label>
-                  <textarea
-                    class="ct-textarea"
-                    id="question"
-                    placeholder="Describe your question in detail..."
-                  ></textarea>
-                </div>
-
-                <div class="ct-field">
-                  <label class="ct-label"
-                    >Attachment
-                    <span class="ct-optional"
-                      >(optional · max 20 MB)</span
-                    ></label
-                  >
-                  <div
-                    class="ct-file-area"
-                    onclick="document.getElementById('fileInput').click()"
-                  >
-                    <i class="ti ti-cloud-upload" aria-hidden="true"></i>
-                    <span
-                      ><strong>Click to upload</strong> or drag and drop a file
-                      here</span
-                    >
-                    <span
-                      style="
-                        display: block;
-                        margin-top: 4px;
-                        font-size: 11px;
-                        color: #c0c8d0;
-                      "
-                      >Max file size: 20 MB</span
-                    >
+            <!-- Question -->
+            <div class="ct-section">
+              <div class="ct-section-hdr">
+                <i class="ti ti-message-question" aria-hidden="true"></i>
+                <span class="ct-section-title">Your Question</span>
+              </div>
+              <div class="ct-section-body">
+                <div style="display: flex; flex-direction: column; gap: 14px">
+                  <div class="ct-field">
+                    <label class="ct-label" for="subject">Subject</label>
+                    <input
+                      class="ct-input"
+                      type="text"
+                      id="subject"
+                      placeholder="Enter the subject of your question"
+                    />
                   </div>
-                  <input
-                    class="ct-file-input"
-                    type="file"
-                    id="fileInput"
-                    onchange="showFileName(this)"
-                  />
-                  <div
-                    id="fileNameDisplay"
-                    style="
-                      font-size: 12px;
-                      color: #0a1e3d;
-                      margin-top: 4px;
-                      display: none;
-                    "
-                  ></div>
+
+                  <div class="ct-field">
+                    <label class="ct-label" for="question">Your question</label>
+                    <textarea
+                      class="ct-textarea"
+                      id="question"
+                      placeholder="Describe your question in detail..."
+                    ></textarea>
+                  </div>
+
+                  <div class="ct-field">
+                    <label class="ct-label"
+                      >Attachment
+                      <span class="ct-optional"
+                        >(optional · max 20 MB)</span
+                      ></label
+                    >
+                    <div
+                      class="ct-file-area"
+                      onclick="document.getElementById('fileInput').click()"
+                    >
+                      <i class="ti ti-cloud-upload" aria-hidden="true"></i>
+                      <span
+                        ><strong>Click to upload</strong> or drag and drop a
+                        file here</span
+                      >
+                      <span
+                        style="
+                          display: block;
+                          margin-top: 4px;
+                          font-size: 11px;
+                          color: #c0c8d0;
+                        "
+                        >Max file size: 20 MB</span
+                      >
+                    </div>
+                    <input
+                      class="ct-file-input"
+                      type="file"
+                      id="fileInput"
+                      onchange="showFileName(this)"
+                    />
+                    <div
+                      id="fileNameDisplay"
+                      style="
+                        font-size: 12px;
+                        color: #0a1e3d;
+                        margin-top: 4px;
+                        display: none;
+                      "
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Contact Details -->
-          <div class="ct-section">
-            <div class="ct-section-hdr">
-              <i class="ti ti-id-badge" aria-hidden="true"></i>
-              <span class="ct-section-title">Your Contact Details</span>
-            </div>
-            <div class="ct-section-body">
-              <div class="ct-grid">
-                <div class="ct-field full">
-                  <label class="ct-label" for="title"
-                    >Title <span class="ct-optional">(optional)</span></label
-                  >
-                  <select class="ct-select" id="title">
-                    <option value="" disabled selected>
-                      -- Select an item --
-                    </option>
-                    <option>Mr</option>
-                    <option>Mrs</option>
-                    <option>Ms</option>
-                    <option>Miss</option>
-                    <option>Sir</option>
-                    <option>Dr</option>
-                    <option>Professor</option>
-                    <option>Mx</option>
-                  </select>
-                </div>
+            <!-- Contact Details -->
+            <div class="ct-section">
+              <div class="ct-section-hdr">
+                <i class="ti ti-id-badge" aria-hidden="true"></i>
+                <span class="ct-section-title">Your Contact Details</span>
+              </div>
+              <div class="ct-section-body">
+                <div class="ct-grid">
+                  <div class="ct-field full">
+                    <label class="ct-label" for="title"
+                      >Title <span class="ct-optional">(optional)</span></label
+                    >
+                    <select class="ct-select" id="title">
+                      <option value="" disabled selected>
+                        -- Select an item --
+                      </option>
+                      <option>Mr</option>
+                      <option>Mrs</option>
+                      <option>Ms</option>
+                      <option>Miss</option>
+                      <option>Sir</option>
+                      <option>Dr</option>
+                      <option>Professor</option>
+                      <option>Mx</option>
+                    </select>
+                  </div>
 
-                <div class="ct-field">
-                  <label class="ct-label" for="firstname">First name</label>
-                  <input
-                    class="ct-input"
-                    type="text"
-                    id="firstname"
-                    placeholder="First name"
-                  />
-                </div>
+                  <div class="ct-field">
+                    <label class="ct-label" for="firstname">First name</label>
+                    <input
+                      class="ct-input"
+                      type="text"
+                      id="firstname"
+                      placeholder="First name"
+                    />
+                  </div>
 
-                <div class="ct-field">
-                  <label class="ct-label" for="lastname">Last name</label>
-                  <input
-                    class="ct-input"
-                    type="text"
-                    id="lastname"
-                    placeholder="Last name"
-                  />
-                </div>
+                  <div class="ct-field">
+                    <label class="ct-label" for="lastname">Last name</label>
+                    <input
+                      class="ct-input"
+                      type="text"
+                      id="lastname"
+                      placeholder="Last name"
+                    />
+                  </div>
 
-                <div class="ct-field">
-                  <label class="ct-label" for="email">Email address</label>
-                  <input
-                    class="ct-input"
-                    type="email"
-                    id="email"
-                    placeholder="your@email.com"
-                  />
-                </div>
+                  <div class="ct-field">
+                    <label class="ct-label" for="email">Email address</label>
+                    <input
+                      class="ct-input"
+                      type="email"
+                      id="email"
+                      placeholder="your@email.com"
+                    />
+                  </div>
 
-                <div class="ct-field">
-                  <label class="ct-label" for="confirmemail"
-                    >Confirm email address</label
-                  >
-                  <input
-                    class="ct-input"
-                    type="email"
-                    id="confirmemail"
-                    placeholder="Repeat your email"
-                  />
-                </div>
+                  <div class="ct-field">
+                    <label class="ct-label" for="confirmemail"
+                      >Confirm email address</label
+                    >
+                    <input
+                      class="ct-input"
+                      type="email"
+                      id="confirmemail"
+                      placeholder="Repeat your email"
+                    />
+                  </div>
 
-                <div class="ct-field full">
-                  <label class="ct-label" for="country">Country / Region</label>
-                  <select class="ct-select" id="country">
-                    <option value="" disabled selected>
-                      Please start typing to find your country/region
-                    </option>
-                    <option>Afghanistan</option>
-                    <option>Aland Islands</option>
-                    <option>Albania</option>
-                    <option>Algeria</option>
-                    <option>American Samoa</option>
-                    <option>Andorra</option>
-                    <option>Angola</option>
-                    <option>Anguilla</option>
-                    <option>Antarctica</option>
-                    <option>Antigua and Barbuda</option>
-                    <option>Argentina</option>
-                    <option>Armenia</option>
-                    <option>Aruba</option>
-                    <option>Australia</option>
-                    <option>Austria</option>
-                    <option>Azerbaijan</option>
-                    <option>Bahamas</option>
-                    <option>Bahrain</option>
-                    <option>Bangladesh</option>
-                    <option>Barbados</option>
-                    <option>Belarus</option>
-                    <option>Belgium</option>
-                    <option>Belize</option>
-                    <option>Benin</option>
-                    <option>Bermuda</option>
-                    <option>Bhutan</option>
-                    <option>Bolivia</option>
-                    <option>Bosnia and Herzegovina</option>
-                    <option>Botswana</option>
-                    <option>Brazil</option>
-                    <option>Brunei Darussalam</option>
-                    <option>Bulgaria</option>
-                    <option>Burkina Faso</option>
-                    <option>Burundi</option>
-                    <option>Cambodia</option>
-                    <option>Cameroon</option>
-                    <option>Canada</option>
-                    <option>Cape Verde</option>
-                    <option>Cayman Islands</option>
-                    <option>Central African Republic</option>
-                    <option>Chad</option>
-                    <option>Chile</option>
-                    <option>China</option>
-                    <option>Colombia</option>
-                    <option>Comoros</option>
-                    <option>Congo</option>
-                    <option>Dem. Rep of the Congo</option>
-                    <option>Cook Islands</option>
-                    <option>Costa Rica</option>
-                    <option>Cote d'Ivoire</option>
-                    <option>Croatia</option>
-                    <option>Cuba</option>
-                    <option>Curacao</option>
-                    <option>Cyprus</option>
-                    <option>Czech Republic</option>
-                    <option>Denmark</option>
-                    <option>Djibouti</option>
-                    <option>Dominica</option>
-                    <option>Dominican Republic</option>
-                    <option>Ecuador</option>
-                    <option>Egypt</option>
-                    <option>El Salvador</option>
-                    <option>Equatorial Guinea</option>
-                    <option>Eritrea</option>
-                    <option>Estonia</option>
-                    <option>Eswatini</option>
-                    <option>Ethiopia</option>
-                    <option>Fiji</option>
-                    <option>Finland</option>
-                    <option>France</option>
-                    <option>Gabon</option>
-                    <option>Gambia</option>
-                    <option>Georgia</option>
-                    <option>Germany</option>
-                    <option>Ghana</option>
-                    <option>Greece</option>
-                    <option>Greenland</option>
-                    <option>Grenada</option>
-                    <option>Guatemala</option>
-                    <option>Guinea</option>
-                    <option>Guinea-Bissau</option>
-                    <option>Guyana</option>
-                    <option>Haiti</option>
-                    <option>Holy See (Vatican)</option>
-                    <option>Honduras</option>
-                    <option>Hong Kong</option>
-                    <option>Hungary</option>
-                    <option>Iceland</option>
-                    <option>India</option>
-                    <option>Indonesia</option>
-                    <option>Iran (Islamic Republic of)</option>
-                    <option>Iraq</option>
-                    <option>Ireland</option>
-                    <option>Isle of Man</option>
-                    <option>Israel</option>
-                    <option>Italy</option>
-                    <option>Jamaica</option>
-                    <option>Japan</option>
-                    <option>Jersey</option>
-                    <option>Jordan</option>
-                    <option>Kazakhstan</option>
-                    <option>Kenya</option>
-                    <option>Kiribati</option>
-                    <option>Korea, Republic of</option>
-                    <option>Kuwait</option>
-                    <option>Kyrgyzstan</option>
-                    <option>Lao, PDR</option>
-                    <option>Latvia</option>
-                    <option>Lebanon</option>
-                    <option>Lesotho</option>
-                    <option>Liberia</option>
-                    <option>Liechtenstein</option>
-                    <option>Lithuania</option>
-                    <option>Luxembourg</option>
-                    <option>Macau</option>
-                    <option>Madagascar</option>
-                    <option>Malawi</option>
-                    <option>Malaysia</option>
-                    <option>Maldives</option>
-                    <option>Mali</option>
-                    <option>Malta</option>
-                    <option>Marshall Islands</option>
-                    <option>Mauritania</option>
-                    <option>Mauritius</option>
-                    <option>Mexico</option>
-                    <option>Moldova, Republic of</option>
-                    <option>Monaco</option>
-                    <option>Mongolia</option>
-                    <option>Montenegro</option>
-                    <option>Morocco</option>
-                    <option>Mozambique</option>
-                    <option>Myanmar</option>
-                    <option>Namibia</option>
-                    <option>Nauru</option>
-                    <option>Nepal</option>
-                    <option>Netherlands</option>
-                    <option>New Caledonia</option>
-                    <option>New Zealand</option>
-                    <option>Nicaragua</option>
-                    <option>Niger</option>
-                    <option>Nigeria</option>
-                    <option>North Macedonia</option>
-                    <option>Norway</option>
-                    <option>Oman</option>
-                    <option>Pakistan</option>
-                    <option>Palau</option>
-                    <option>Palestine</option>
-                    <option>Panama</option>
-                    <option>Papua New Guinea</option>
-                    <option>Paraguay</option>
-                    <option>Peru</option>
-                    <option>Philippines</option>
-                    <option>Poland</option>
-                    <option>Portugal</option>
-                    <option>Puerto Rico</option>
-                    <option>Qatar</option>
-                    <option>Romania</option>
-                    <option>Russian Federation</option>
-                    <option>Rwanda</option>
-                    <option>Saint Kitts and Nevis</option>
-                    <option>Saint Lucia</option>
-                    <option>Saint Vincent and the Grenadines</option>
-                    <option>Samoa</option>
-                    <option>San Marino</option>
-                    <option>Sao Tome and Principe</option>
-                    <option>Saudi Arabia</option>
-                    <option>Senegal</option>
-                    <option>Serbia</option>
-                    <option>Seychelles</option>
-                    <option>Sierra Leone</option>
-                    <option>Singapore</option>
-                    <option>Slovakia</option>
-                    <option>Slovenia</option>
-                    <option>Solomon Islands</option>
-                    <option>Somalia</option>
-                    <option>South Africa</option>
-                    <option>South Sudan</option>
-                    <option>Spain</option>
-                    <option>Sri Lanka</option>
-                    <option>Sudan</option>
-                    <option>Suriname</option>
-                    <option>Sweden</option>
-                    <option>Switzerland</option>
-                    <option>Syrian Arab Republic</option>
-                    <option>Taiwan</option>
-                    <option>Tajikistan</option>
-                    <option>Tanzania, the United Republic of</option>
-                    <option>Thailand</option>
-                    <option>Timor-Leste (East Timor)</option>
-                    <option>Togo</option>
-                    <option>Tonga</option>
-                    <option>Trinidad and Tobago</option>
-                    <option>Tunisia</option>
-                    <option>Türkiye</option>
-                    <option>Turkmenistan</option>
-                    <option>Tuvalu</option>
-                    <option>Uganda</option>
-                    <option>Ukraine</option>
-                    <option>United Arab Emirates</option>
-                    <option>United Kingdom</option>
-                    <option>United States</option>
-                    <option>Uruguay</option>
-                    <option>Uzbekistan</option>
-                    <option>Vanuatu</option>
-                    <option>Venezuela</option>
-                    <option>Viet Nam</option>
-                    <option>Yemen</option>
-                    <option>Zambia</option>
-                    <option>Zimbabwe</option>
-                  </select>
+                  <div class="ct-field full">
+                    <label class="ct-label" for="country"
+                      >Country / Region</label
+                    >
+                    <select class="ct-select" id="country">
+                      <option value="" disabled selected>
+                        Please start typing to find your country/region
+                      </option>
+                      <option>Afghanistan</option>
+                      <option>Aland Islands</option>
+                      <option>Albania</option>
+                      <option>Algeria</option>
+                      <option>American Samoa</option>
+                      <option>Andorra</option>
+                      <option>Angola</option>
+                      <option>Anguilla</option>
+                      <option>Antarctica</option>
+                      <option>Antigua and Barbuda</option>
+                      <option>Argentina</option>
+                      <option>Armenia</option>
+                      <option>Aruba</option>
+                      <option>Australia</option>
+                      <option>Austria</option>
+                      <option>Azerbaijan</option>
+                      <option>Bahamas</option>
+                      <option>Bahrain</option>
+                      <option>Bangladesh</option>
+                      <option>Barbados</option>
+                      <option>Belarus</option>
+                      <option>Belgium</option>
+                      <option>Belize</option>
+                      <option>Benin</option>
+                      <option>Bermuda</option>
+                      <option>Bhutan</option>
+                      <option>Bolivia</option>
+                      <option>Bosnia and Herzegovina</option>
+                      <option>Botswana</option>
+                      <option>Brazil</option>
+                      <option>Brunei Darussalam</option>
+                      <option>Bulgaria</option>
+                      <option>Burkina Faso</option>
+                      <option>Burundi</option>
+                      <option>Cambodia</option>
+                      <option>Cameroon</option>
+                      <option>Canada</option>
+                      <option>Cape Verde</option>
+                      <option>Cayman Islands</option>
+                      <option>Central African Republic</option>
+                      <option>Chad</option>
+                      <option>Chile</option>
+                      <option>China</option>
+                      <option>Colombia</option>
+                      <option>Comoros</option>
+                      <option>Congo</option>
+                      <option>Dem. Rep of the Congo</option>
+                      <option>Cook Islands</option>
+                      <option>Costa Rica</option>
+                      <option>Cote d'Ivoire</option>
+                      <option>Croatia</option>
+                      <option>Cuba</option>
+                      <option>Curacao</option>
+                      <option>Cyprus</option>
+                      <option>Czech Republic</option>
+                      <option>Denmark</option>
+                      <option>Djibouti</option>
+                      <option>Dominica</option>
+                      <option>Dominican Republic</option>
+                      <option>Ecuador</option>
+                      <option>Egypt</option>
+                      <option>El Salvador</option>
+                      <option>Equatorial Guinea</option>
+                      <option>Eritrea</option>
+                      <option>Estonia</option>
+                      <option>Eswatini</option>
+                      <option>Ethiopia</option>
+                      <option>Fiji</option>
+                      <option>Finland</option>
+                      <option>France</option>
+                      <option>Gabon</option>
+                      <option>Gambia</option>
+                      <option>Georgia</option>
+                      <option>Germany</option>
+                      <option>Ghana</option>
+                      <option>Greece</option>
+                      <option>Greenland</option>
+                      <option>Grenada</option>
+                      <option>Guatemala</option>
+                      <option>Guinea</option>
+                      <option>Guinea-Bissau</option>
+                      <option>Guyana</option>
+                      <option>Haiti</option>
+                      <option>Holy See (Vatican)</option>
+                      <option>Honduras</option>
+                      <option>Hong Kong</option>
+                      <option>Hungary</option>
+                      <option>Iceland</option>
+                      <option>India</option>
+                      <option>Indonesia</option>
+                      <option>Iran (Islamic Republic of)</option>
+                      <option>Iraq</option>
+                      <option>Ireland</option>
+                      <option>Isle of Man</option>
+                      <option>Israel</option>
+                      <option>Italy</option>
+                      <option>Jamaica</option>
+                      <option>Japan</option>
+                      <option>Jersey</option>
+                      <option>Jordan</option>
+                      <option>Kazakhstan</option>
+                      <option>Kenya</option>
+                      <option>Kiribati</option>
+                      <option>Korea, Republic of</option>
+                      <option>Kuwait</option>
+                      <option>Kyrgyzstan</option>
+                      <option>Lao, PDR</option>
+                      <option>Latvia</option>
+                      <option>Lebanon</option>
+                      <option>Lesotho</option>
+                      <option>Liberia</option>
+                      <option>Liechtenstein</option>
+                      <option>Lithuania</option>
+                      <option>Luxembourg</option>
+                      <option>Macau</option>
+                      <option>Madagascar</option>
+                      <option>Malawi</option>
+                      <option>Malaysia</option>
+                      <option>Maldives</option>
+                      <option>Mali</option>
+                      <option>Malta</option>
+                      <option>Marshall Islands</option>
+                      <option>Mauritania</option>
+                      <option>Mauritius</option>
+                      <option>Mexico</option>
+                      <option>Moldova, Republic of</option>
+                      <option>Monaco</option>
+                      <option>Mongolia</option>
+                      <option>Montenegro</option>
+                      <option>Morocco</option>
+                      <option>Mozambique</option>
+                      <option>Myanmar</option>
+                      <option>Namibia</option>
+                      <option>Nauru</option>
+                      <option>Nepal</option>
+                      <option>Netherlands</option>
+                      <option>New Caledonia</option>
+                      <option>New Zealand</option>
+                      <option>Nicaragua</option>
+                      <option>Niger</option>
+                      <option>Nigeria</option>
+                      <option>North Macedonia</option>
+                      <option>Norway</option>
+                      <option>Oman</option>
+                      <option>Pakistan</option>
+                      <option>Palau</option>
+                      <option>Palestine</option>
+                      <option>Panama</option>
+                      <option>Papua New Guinea</option>
+                      <option>Paraguay</option>
+                      <option>Peru</option>
+                      <option>Philippines</option>
+                      <option>Poland</option>
+                      <option>Portugal</option>
+                      <option>Puerto Rico</option>
+                      <option>Qatar</option>
+                      <option>Romania</option>
+                      <option>Russian Federation</option>
+                      <option>Rwanda</option>
+                      <option>Saint Kitts and Nevis</option>
+                      <option>Saint Lucia</option>
+                      <option>Saint Vincent and the Grenadines</option>
+                      <option>Samoa</option>
+                      <option>San Marino</option>
+                      <option>Sao Tome and Principe</option>
+                      <option>Saudi Arabia</option>
+                      <option>Senegal</option>
+                      <option>Serbia</option>
+                      <option>Seychelles</option>
+                      <option>Sierra Leone</option>
+                      <option>Singapore</option>
+                      <option>Slovakia</option>
+                      <option>Slovenia</option>
+                      <option>Solomon Islands</option>
+                      <option>Somalia</option>
+                      <option>South Africa</option>
+                      <option>South Sudan</option>
+                      <option>Spain</option>
+                      <option>Sri Lanka</option>
+                      <option>Sudan</option>
+                      <option>Suriname</option>
+                      <option>Sweden</option>
+                      <option>Switzerland</option>
+                      <option>Syrian Arab Republic</option>
+                      <option>Taiwan</option>
+                      <option>Tajikistan</option>
+                      <option>Tanzania, the United Republic of</option>
+                      <option>Thailand</option>
+                      <option>Timor-Leste (East Timor)</option>
+                      <option>Togo</option>
+                      <option>Tonga</option>
+                      <option>Trinidad and Tobago</option>
+                      <option>Tunisia</option>
+                      <option>Türkiye</option>
+                      <option>Turkmenistan</option>
+                      <option>Tuvalu</option>
+                      <option>Uganda</option>
+                      <option>Ukraine</option>
+                      <option>United Arab Emirates</option>
+                      <option>United Kingdom</option>
+                      <option>United States</option>
+                      <option>Uruguay</option>
+                      <option>Uzbekistan</option>
+                      <option>Vanuatu</option>
+                      <option>Venezuela</option>
+                      <option>Viet Nam</option>
+                      <option>Yemen</option>
+                      <option>Zambia</option>
+                      <option>Zimbabwe</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="ct-submit-row">
-            <button class="ct-submit-btn" type="button">
-              <i class="ti ti-send"></i> Send your question
-            </button>
-            <a class="ct-cancel-btn" href="#"><i class="ti ti-x"></i> Cancel</a>
+            <div class="ct-submit-row">
+              <button class="ct-submit-btn" type="button">
+                <i class="ti ti-send"></i> Send your question
+              </button>
+              <a class="ct-cancel-btn" href="#"
+                ><i class="ti ti-x"></i> Cancel</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -511,6 +842,22 @@
       include("nav", "/jsm-demo/layout/new-nav.html");
       include("indexing", "/jsm-demo/layout/new-indexing.html");
       include("footer", "/jsm-demo/layout/new-footer.html");
+
+      document.querySelectorAll(".ct-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll(".ct-tab").forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+
+          const targetId = tab.dataset.target;
+          document.querySelectorAll(".ct-panel").forEach((panel) => {
+            panel.hidden = panel.id !== targetId;
+          });
+        });
+      });
     </script>
   </body>
 </html>

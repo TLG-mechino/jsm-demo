@@ -243,11 +243,11 @@ svg {
   color: var(--color-primary);
 }
 
-/* ===== shared gi- system ===== */
-.gi-wrap {
+.rr-wrap {
   padding: 1rem 0;
 }
-.gi-header {
+
+.rr-header {
   background: #d0e2f7;
   border-radius: 12px;
   padding: 1rem 1.25rem;
@@ -256,185 +256,228 @@ svg {
   align-items: center;
   gap: 10px;
 }
-.gi-header i {
+.rr-header i {
   font-size: 20px;
   color: #0a1e3d;
 }
-.gi-header-title {
+.rr-header-title {
   font-size: 15px;
   font-weight: 500;
   color: #0a1e3d;
   margin: 0;
 }
 
-.gi-section {
+.rr-section {
   background: #fff;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1rem;
 }
-.gi-section-hdr {
+.rr-section-hdr {
   background: #d0e2f7;
   padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.gi-section-hdr i {
+.rr-section-hdr i {
   font-size: 15px;
   color: #0a1e3d;
 }
-.gi-section-title {
+.rr-section-title {
   font-size: 13px;
   font-weight: 500;
   color: #0a1e3d;
   letter-spacing: 0.03em;
 }
-.gi-section-body {
+.rr-section-body {
   padding: 1.25rem 1.5rem;
   font-size: 13px;
   color: #5c6370;
   line-height: 1.8;
 }
-.gi-section-body p {
+.rr-section-body p {
   margin: 0 0 0.75rem;
 }
-.gi-section-body p:last-child {
+.rr-section-body p:last-child {
   margin: 0;
 }
 
-.gi-glance-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 0.5rem;
-}
-.gi-glance-item {
-  background: #f5f8fd;
-  border: 0.5px solid #d0e2f7;
-  border-radius: 10px;
-  padding: 10px 14px;
+/* Recognition cards */
+.rr-recog-grid {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 10px;
 }
-.gi-glance-label {
-  font-size: 10px;
-  font-weight: 500;
-  color: #9aa0ab;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.rr-recog-card {
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
-.gi-glance-value {
+.rr-recog-card-hdr {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f5f8fd;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
+}
+.rr-recog-icon {
+  width: 32px;
+  height: 32px;
+  background: #d0e2f7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.rr-recog-icon i {
+  font-size: 16px;
+  color: #0a1e3d;
+}
+.rr-recog-title {
   font-size: 13px;
   font-weight: 500;
   color: #0a1e3d;
 }
-@media (max-width: 560px) {
-  .gi-glance-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.rr-recog-body {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #5c6370;
+  line-height: 1.7;
+}
+.rr-recog-body p {
+  margin: 0 0 6px;
+}
+.rr-recog-body p:last-child {
+  margin: 0;
 }
 
-.gi-note {
+/* Dot list */
+.rr-dot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+.rr-dot-item {
   display: flex;
   gap: 8px;
   align-items: flex-start;
-  background: #f5f8fd;
-  border: 0.5px dashed #a8c0e0;
-  border-radius: 10px;
-  padding: 10px 13px;
-  margin-top: 0.9rem;
-  font-size: 12px;
-  color: #5c6370;
 }
-.gi-note i {
-  font-size: 14px;
-  color: #a97a2c;
+.rr-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a8c0e0;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.rr-dot-text {
+  font-size: 13px;
+  color: #5c6370;
+  line-height: 1.6;
+}
+
+/* Benefits grid */
+.rr-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.rr-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f5f8fd;
+  border: 0.5px solid #d0e2f7;
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+.rr-benefit-icon {
+  width: 28px;
+  height: 28px;
+  background: #d0e2f7;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   margin-top: 1px;
 }
+.rr-benefit-icon i {
+  font-size: 14px;
+  color: #0a1e3d;
+}
+.rr-benefit-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0a1e3d;
+  line-height: 1.5;
+  padding-top: 5px;
+}
 
-/* ===== board table ===== */
-.gi-table-wrap {
-  overflow-x: auto;
+/* Award criteria tags */
+.rr-award-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
 }
-.gi-table {
-  margin: 20px;
-  width: 90%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-  min-width: 620px;
-}
-.gi-table thead th {
-  background: #d0e2f7;
-  color: #0a1e3d;
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  text-align: left;
-  padding: 10px 14px;
-  white-space: nowrap;
-}
-.gi-table thead th:first-child {
-  border-radius: 8px 0 0 0;
-}
-.gi-table thead th:last-child {
-  border-radius: 0 8px 0 0;
-}
-.gi-table tbody td {
-  padding: 10px 14px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
-  color: #1a1a1a;
-  vertical-align: middle;
-}
-.gi-table tbody tr:nth-child(even) {
-  background: #f9fbfe;
-}
-.gi-table tbody tr:hover {
-  background: #f0f6fd;
-}
-.gi-table tbody tr:last-child td {
-  border-bottom: none;
-}
-.gi-table .gi-name {
-  font-weight: 600;
-  color: #0a1e3d;
-}
-.gi-table .gi-placeholder {
-  color: #b7bfca;
-  font-style: italic;
-  font-weight: 400;
-}
-.gi-country-tag {
+.rr-award-tag {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 11.5px;
-  font-weight: 500;
+  font-size: 12px;
   color: #0a1e3d;
+  background: #d0e2f7;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.rr-award-tag i {
+  font-size: 12px;
+}
+
+/* Appreciation card */
+.rr-appreciation {
   background: #f5f8fd;
   border: 0.5px solid #d0e2f7;
-  border-radius: 6px;
-  padding: 3px 8px;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
 }
-.gi-country-tag i {
-  font-size: 12px;
-  color: #4c7fb8;
-}
-.gi-row-num {
-  display: inline-flex;
+.rr-appreciation-icon {
+  width: 48px;
+  height: 48px;
+  background: #d0e2f7;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #eef4fb;
-  color: #7c8896;
-  font-size: 10.5px;
-  font-weight: 600;
+  margin: 0 auto 12px;
+}
+.rr-appreciation-icon i {
+  font-size: 24px;
+  color: #0a1e3d;
+}
+.rr-appreciation-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0a1e3d;
+  margin-bottom: 10px;
+}
+.rr-appreciation-text {
+  font-size: 13px;
+  color: #5c6370;
+  line-height: 1.75;
+}
+
+@media (max-width: 480px) {
+  .rr-benefits {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 1180px) {

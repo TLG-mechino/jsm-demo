@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/data-availability-policy.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-database" aria-hidden="true"></i>
+            <p class="gi-header-title">Data Availability Policy</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                JSM encourages authors to promote transparency and
+                reproducibility by making research data available whenever
+                possible.
+              </p>
+              <p>
+                Authors are encouraged to deposit supporting datasets in
+                recognized institutional or disciplinary repositories before
+                publication.
+              </p>
+            </div>
+          </div>
+
+          <!-- Data Availability Statement -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-file-text" aria-hidden="true"></i>
+              <span class="gi-section-title">Data Availability Statement</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Each manuscript should include a Data Availability Statement
+                describing:
+              </p>
+              <div class="gi-rule-list">
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-map-pin"></i></div>
+                  <div class="gi-rule-text">Where the data can be accessed</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-database"></i></div>
+                  <div class="gi-rule-text">Repository name</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-fingerprint"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    Persistent identifier (DOI where applicable)
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-lock"></i></div>
+                  <div class="gi-rule-text">Access conditions</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exceptions -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-alert-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">When Data Cannot Be Shared</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                If data cannot be shared due to the following restrictions,
+                authors should clearly explain the reason:
+              </p>
+              <div class="gi-areas">
+                <span class="gi-area-tag"
+                  ><i class="ti ti-shield-check"></i> Ethical</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-gavel"></i> Legal</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-briefcase"></i> Commercial</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-lock"></i> Confidentiality</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial verification -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-search" aria-hidden="true"></i>
+              <span class="gi-section-title">Editorial Verification</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Editors may request access to original data during the review
+                  process if necessary to verify reported findings.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

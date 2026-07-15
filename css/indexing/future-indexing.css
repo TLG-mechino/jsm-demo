@@ -243,7 +243,6 @@ svg {
   color: var(--color-primary);
 }
 
-/* ===== shared gi- system ===== */
 .gi-wrap {
   padding: 1rem 0;
 }
@@ -259,6 +258,7 @@ svg {
 .gi-header i {
   font-size: 20px;
   color: #0a1e3d;
+  flex-shrink: 0;
 }
 .gi-header-title {
   font-size: 15px;
@@ -304,137 +304,205 @@ svg {
   margin: 0;
 }
 
-.gi-glance-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 0.5rem;
+.gi-divider {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+  margin: 1.1rem 0;
 }
-.gi-glance-item {
+
+.gi-callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #d0e2f7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 0.9rem;
+}
+.gi-callout i {
+  font-size: 17px;
+  color: #0a1e3d;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.gi-callout-text {
+  font-size: 13px;
+  color: #0a1e3d;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Objective / rule list */
+.gi-rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0.3rem;
+}
+.gi-rule-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
   background: #f5f8fd;
   border: 0.5px solid #d0e2f7;
   border-radius: 10px;
-  padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.gi-glance-label {
-  font-size: 10px;
-  font-weight: 500;
-  color: #9aa0ab;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.gi-glance-value {
-  font-size: 13px;
-  font-weight: 500;
-  color: #0a1e3d;
-}
-@media (max-width: 560px) {
-  .gi-glance-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.gi-note {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  background: #f5f8fd;
-  border: 0.5px dashed #a8c0e0;
-  border-radius: 10px;
   padding: 10px 13px;
-  margin-top: 0.9rem;
-  font-size: 12px;
-  color: #5c6370;
 }
-.gi-note i {
-  font-size: 14px;
-  color: #a97a2c;
+.gi-rule-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: #d0e2f7;
+  color: #0a1e3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   margin-top: 1px;
 }
+.gi-rule-icon i {
+  font-size: 12px;
+}
+.gi-rule-text {
+  font-size: 13px;
+  color: #1a1a1a;
+  font-weight: 500;
+  line-height: 1.55;
+  padding-top: 1px;
+}
 
-/* ===== board table ===== */
-.gi-table-wrap {
-  overflow-x: auto;
+/* Database target cards */
+.gi-db-card {
+  border: 0.5px solid #d0e2f7;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #f5f8fd;
 }
-.gi-table {
-  margin: 20px;
-  width: 90%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-  min-width: 620px;
+.gi-db-card:last-child {
+  margin-bottom: 0;
 }
-.gi-table thead th {
+.gi-db-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.gi-db-hdr-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gi-db-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
   background: #d0e2f7;
   color: #0a1e3d;
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  text-align: left;
-  padding: 10px 14px;
-  white-space: nowrap;
-}
-.gi-table thead th:first-child {
-  border-radius: 8px 0 0 0;
-}
-.gi-table thead th:last-child {
-  border-radius: 0 8px 0 0;
-}
-.gi-table tbody td {
-  padding: 10px 14px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
-  color: #1a1a1a;
-  vertical-align: middle;
-}
-.gi-table tbody tr:nth-child(even) {
-  background: #f9fbfe;
-}
-.gi-table tbody tr:hover {
-  background: #f0f6fd;
-}
-.gi-table tbody tr:last-child td {
-  border-bottom: none;
-}
-.gi-table .gi-name {
-  font-weight: 600;
-  color: #0a1e3d;
-}
-.gi-table .gi-placeholder {
-  color: #b7bfca;
-  font-style: italic;
-  font-weight: 400;
-}
-.gi-country-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  font-weight: 500;
-  color: #0a1e3d;
-  background: #f5f8fd;
-  border: 0.5px solid #d0e2f7;
-  border-radius: 6px;
-  padding: 3px 8px;
-}
-.gi-country-tag i {
-  font-size: 12px;
-  color: #4c7fb8;
-}
-.gi-row-num {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #eef4fb;
-  color: #7c8896;
+  flex-shrink: 0;
+}
+.gi-db-icon i {
+  font-size: 15px;
+}
+.gi-db-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0a1e3d;
+}
+.gi-db-abbr {
   font-size: 10.5px;
+  color: #7c8896;
+}
+.gi-db-status {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #7a5410;
+  background: #fdf3e4;
+  border: 0.5px solid #ecd39f;
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.gi-db-desc {
+  font-size: 12.5px;
+  color: #5c6370;
+  line-height: 1.65;
+}
+.gi-db-criteria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.gi-db-criteria-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: #0a1e3d;
+  background: #fff;
+  border: 0.5px solid #d0e2f7;
+  border-radius: 7px;
+  padding: 4px 9px;
+}
+
+/* Roadmap timeline */
+.gi-timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+.gi-tl-item {
+  display: flex;
+  gap: 14px;
+}
+.gi-tl-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.gi-tl-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #d0e2f7;
+  color: #0a1e3d;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gi-tl-line {
+  width: 2px;
+  flex: 1;
+  background: #d0e2f7;
+  margin: 2px 0;
+  min-height: 16px;
+}
+.gi-tl-item:last-child .gi-tl-line {
+  display: none;
+}
+.gi-tl-content {
+  padding: 0 0 16px 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.gi-tl-item:last-child .gi-tl-content {
+  padding-bottom: 0;
+}
+.gi-tl-status {
+  font-size: 13px;
   font-weight: 600;
+  color: #0a1e3d;
+  padding-top: 2px;
 }
 
 @media (max-width: 1180px) {

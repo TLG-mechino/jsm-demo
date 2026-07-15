@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/editorial-independence.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-shield-lock" aria-hidden="true"></i>
+            <p class="gi-header-title">Editorial Independence</p>
+          </div>
+
+          <!-- Independence from external influence -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-shield-check" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Independence from External Influence</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <p>The Journal maintains complete editorial independence from:</p>
+              <div class="gi-areas">
+                <span class="gi-area-tag"
+                  ><i class="ti ti-building"></i> The publisher</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-building-bank"></i> Sponsoring
+                  institutions</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-ad"></i> Advertisers</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-coin"></i> Funding bodies</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-flag"></i> Political organizations</span
+                >
+              </div>
+              <div class="gi-callout">
+                <i class="ti ti-star" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Editorial decisions are based exclusively on scholarly
+                  merit.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Prohibited influences -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-ban" aria-hidden="true"></i>
+              <span class="gi-section-title">Prohibited Influences</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Editors must not allow the following interests to influence
+                publication decisions:
+              </p>
+              <div class="gi-nofactor-grid">
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Commercial</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Political</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Financial</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Personal</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Board obligations -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-users-group" aria-hidden="true"></i>
+              <span class="gi-section-title">Editorial Board Obligations</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-rule-list">
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-file-description"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    Declare any conflicts of interest
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-user-off"></i></div>
+                  <div class="gi-rule-text">
+                    Recuse themselves from editorial handling whenever
+                    impartiality may reasonably be questioned
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editor-in-Chief responsibility -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-user-star" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Editor-in-Chief Responsibility</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-resp-card">
+                <div class="gi-resp-icon">
+                  <i class="ti ti-shield-lock"></i>
+                </div>
+                <div>
+                  <div class="gi-resp-title">
+                    Safeguarding Editorial Independence
+                  </div>
+                  <div class="gi-resp-desc">
+                    The Editor-in-Chief has ultimate responsibility for
+                    safeguarding editorial independence and ensuring that all
+                    decisions are consistent with the Journal's ethical
+                    standards.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

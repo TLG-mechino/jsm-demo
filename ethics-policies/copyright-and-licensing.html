@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/copyright-and-licensing.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-license" aria-hidden="true"></i>
+            <p class="gi-header-title">Copyright and Licensing</p>
+          </div>
+
+          <!-- Copyright -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-copyright" aria-hidden="true"></i>
+              <span class="gi-section-title">Copyright</span>
+            </div>
+            <div class="gi-section-body">
+              <p>Authors retain copyright of their published work.</p>
+              <div class="gi-callout">
+                <i class="ti ti-file-check" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Upon acceptance, authors grant the Journal a non-exclusive
+                  license to publish and disseminate the article.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- License -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-certificate" aria-hidden="true"></i>
+              <span class="gi-section-title">License</span>
+            </div>
+            <div class="gi-section-body">
+              <p>All articles are published under the following license:</p>
+              <div class="gi-license-card">
+                <div class="gi-license-icon"><i class="ti ti-license"></i></div>
+                <div>
+                  <div class="gi-license-title">
+                    Creative Commons Attribution License (CC BY 4.0)
+                  </div>
+                  <div class="gi-license-desc">
+                    Open access license enabling broad reuse with attribution to
+                    the original authors and source.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What readers may do -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-users" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Under This License, Readers May</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-perm-grid">
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-copy"></i></div>
+                  <div class="gi-perm-text">Copy</div>
+                </div>
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-share"></i></div>
+                  <div class="gi-perm-text">Distribute</div>
+                </div>
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-edit"></i></div>
+                  <div class="gi-perm-text">Adapt</div>
+                </div>
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-language"></i></div>
+                  <div class="gi-perm-text">Translate</div>
+                </div>
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-printer"></i></div>
+                  <div class="gi-perm-text">Reproduce</div>
+                </div>
+                <div class="gi-perm-card">
+                  <div class="gi-perm-icon"><i class="ti ti-recycle"></i></div>
+                  <div class="gi-perm-text">Reuse</div>
+                </div>
+              </div>
+              <div class="gi-callout">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >The published work may be used for any lawful purpose,
+                  provided appropriate credit is given to the original authors
+                  and source.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Self-archiving -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-building-bank" aria-hidden="true"></i>
+              <span class="gi-section-title">Self-Archiving</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-sub-list">
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-building"></i></div>
+                  <div class="gi-sub-text">
+                    Authors are free to deposit the published Version of Record
+                    in institutional repositories
+                  </div>
+                </div>
+                <div class="gi-sub-item">
+                  <div class="gi-sub-dot"><i class="ti ti-world"></i></div>
+                  <div class="gi-sub-text">
+                    Authors are free to deposit the published Version of Record
+                    on personal webpages
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

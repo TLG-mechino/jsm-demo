@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/conflict-of-interest.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-scale" aria-hidden="true"></i>
+            <p class="gi-header-title">Conflict of Interest</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Transparency regarding competing interests is essential to
+                maintaining confidence in scholarly publishing.
+              </p>
+              <div class="gi-callout">
+                <i class="ti ti-users-group" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Authors, reviewers, and editors must disclose any financial,
+                  institutional, professional, or personal relationships that
+                  could influence — or reasonably appear to influence — their
+                  judgment.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Examples -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-list-check" aria-hidden="true"></i>
+              <span class="gi-section-title">Examples Include</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-areas">
+                <span class="gi-area-tag"
+                  ><i class="ti ti-briefcase"></i> Employment</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-user-check"></i> Consultancy</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-chart-line"></i> Stock ownership</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-coin"></i> Research funding</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-certificate"></i> Patents</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-heart"></i> Personal relationships</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-trophy"></i> Academic competition</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclosure statement -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-file-text" aria-hidden="true"></i>
+              <span class="gi-section-title">Disclosure Statement</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Where no competing interests exist, authors should include the
+                following statement:
+              </p>
+              <div class="gi-statement">
+                <i class="ti ti-quote" aria-hidden="true"></i>
+                <span class="gi-statement-text" id="coiStatement"
+                  >The authors declare that they have no competing
+                  interests.</span
+                >
+              </div>
+              <button class="gi-copy-btn" id="copyBtn" type="button">
+                <i class="ti ti-copy"></i>Copy statement
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      document.getElementById("copyBtn").addEventListener("click", function () {
+        var text = document.getElementById("coiStatement").textContent;
+        var btn = this;
+        function done() {
+          var original = btn.innerHTML;
+          btn.innerHTML = '<i class="ti ti-check"></i>Copied';
+          setTimeout(function () {
+            btn.innerHTML = original;
+          }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(text)
+            .then(done)
+            .catch(function () {
+              fallbackCopy(text);
+              done();
+            });
+        } else {
+          fallbackCopy(text);
+          done();
+        }
+        function fallbackCopy(t) {
+          var ta = document.createElement("textarea");
+          ta.value = t;
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+          } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/human-subjects-and-ethics-approval.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-first-aid-kit" aria-hidden="true"></i>
+            <p class="gi-header-title">Human Subjects and Ethics Approval</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Research involving human participants must comply with
+                internationally accepted ethical principles and applicable
+                national regulations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Author declarations -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-checklist" aria-hidden="true"></i>
+              <span class="gi-section-title">Authors Should Indicate That</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-checklist">
+                <div class="gi-check-item">
+                  <div class="gi-check-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-check-text">
+                    Informed consent was obtained where appropriate
+                  </div>
+                </div>
+                <div class="gi-check-item">
+                  <div class="gi-check-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-check-text">
+                    Approval was granted by a recognized ethics committee or
+                    institutional review board
+                  </div>
+                </div>
+                <div class="gi-check-item">
+                  <div class="gi-check-icon"><i class="ti ti-check"></i></div>
+                  <div class="gi-check-text">
+                    Participant confidentiality has been protected
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Required identifiers -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-id-badge-2" aria-hidden="true"></i>
+              <span class="gi-section-title">Required Identification</span>
+            </div>
+            <div class="gi-section-body">
+              <p>The manuscript should identify:</p>
+              <div class="gi-kv-list">
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Approving Institution</span>
+                  <span class="gi-kv-val">Name of ethics committee / IRB</span>
+                </div>
+                <div class="gi-kv-row">
+                  <span class="gi-kv-key">Approval Reference No.</span>
+                  <span class="gi-kv-val">Where applicable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consequence -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+              <span class="gi-section-title">Non-Compliance</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout-warn">
+                <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+                <span class="gi-callout-warn-text"
+                  >Research that fails to meet accepted ethical standards may be
+                  rejected regardless of its scientific merit.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

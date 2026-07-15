@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/publication-timeline.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-calendar-time" aria-hidden="true"></i>
+            <p class="gi-header-title">Publication Timeline</p>
+          </div>
+
+          <!-- Timeline -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-timeline" aria-hidden="true"></i>
+              <span class="gi-section-title">Stage-by-Stage Target Times</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-timeline">
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">1</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Initial editorial screening</div>
+                    <span class="gi-tl-time">3–5 days</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">2</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Reviewer invitation</div>
+                    <span class="gi-tl-time">5–7 days</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">3</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Peer review</div>
+                    <span class="gi-tl-time">4–6 weeks</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">4</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">First decision</div>
+                    <span class="gi-tl-time">6–8 weeks</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">5</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Author revision</div>
+                    <span class="gi-tl-time">2–4 weeks</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">6</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Final decision</div>
+                    <span class="gi-tl-time">1–2 weeks</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot">7</div>
+                    <div class="gi-tl-line"></div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Production</div>
+                    <span class="gi-tl-time">2–3 weeks</span>
+                  </div>
+                </div>
+
+                <div class="gi-tl-item">
+                  <div class="gi-tl-marker">
+                    <div class="gi-tl-dot final">
+                      <i class="ti ti-world"></i>
+                    </div>
+                  </div>
+                  <div class="gi-tl-content">
+                    <div class="gi-tl-status">Online publication</div>
+                    <span class="gi-tl-time"
+                      >Within 7 days after proof approval</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="gi-note">
+                <i class="ti ti-alert-circle" aria-hidden="true"></i>
+                <span
+                  >Timelines are target estimates and may vary depending on
+                  reviewer availability and manuscript complexity.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Submission") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

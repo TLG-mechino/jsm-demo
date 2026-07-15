@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/indexing/doi.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-fingerprint" aria-hidden="true"></i>
+            <p class="gi-header-title">Digital Object Identifier (DOI)</p>
+          </div>
+
+          <!-- Overview -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-info-circle" aria-hidden="true"></i>
+              <span class="gi-section-title">Overview</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                Every article published in the Journal of State Management is
+                assigned a Digital Object Identifier (DOI).
+              </p>
+              <p>
+                A DOI provides a permanent, persistent, and globally recognized
+                identifier that enables reliable citation and long-term access
+                to scholarly publications.
+              </p>
+              <div class="gi-callout">
+                <i class="ti ti-link" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Unlike URLs, DOIs remain stable even if the location of an
+                  article changes.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-award" aria-hidden="true"></i>
+              <span class="gi-section-title">Benefits of DOI</span>
+            </div>
+            <div class="gi-section-body">
+              <p>The DOI system:</p>
+              <div class="gi-rule-list">
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-shield-check"></i>
+                  </div>
+                  <div class="gi-rule-text">
+                    Provides permanent article identification
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-quote"></i></div>
+                  <div class="gi-rule-text">Facilitates accurate citation</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-database"></i></div>
+                  <div class="gi-rule-text">Supports metadata exchange</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-search"></i></div>
+                  <div class="gi-rule-text">
+                    Improves article discoverability
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-link"></i></div>
+                  <div class="gi-rule-text">
+                    Enables reliable linking across scholarly databases
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon">
+                    <i class="ti ti-chart-line"></i>
+                  </div>
+                  <div class="gi-rule-text">Supports citation tracking</div>
+                </div>
+              </div>
+              <div class="gi-note">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span
+                  >Each DOI is registered before publication and remains
+                  permanently associated with the published Version of
+                  Record.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- DOI structure -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-binary" aria-hidden="true"></i>
+              <span class="gi-section-title">DOI Structure</span>
+            </div>
+            <div class="gi-section-body">
+              <p>A typical DOI assigned by JSM follows the format:</p>
+
+              <div class="gi-doi-box">
+                <span class="gi-doi-part gi-doi-static">https://doi.org/</span
+                ><span class="gi-doi-part gi-doi-prefix">10.59394</span
+                ><span class="gi-doi-part gi-doi-static">/</span
+                ><span class="gi-doi-part gi-doi-suffix">xxxx.xxxxx</span>
+              </div>
+
+              <div class="gi-doi-legend">
+                <div class="gi-doi-legend-item">
+                  <div class="gi-doi-swatch prefix"></div>
+                  Journal's DOI prefix
+                </div>
+                <div class="gi-doi-legend-item">
+                  <div class="gi-doi-swatch suffix"></div>
+                  Unique article suffix
+                </div>
+              </div>
+
+              <div class="gi-doi-example">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span
+                  >10.59394 is the Journal's DOI prefix; the suffix uniquely
+                  identifies the individual article.</span
+                >
+              </div>
+
+              <div class="gi-callout">
+                <i class="ti ti-quote" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >DOIs should always be included when citing JSM
+                  articles.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Indexing") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

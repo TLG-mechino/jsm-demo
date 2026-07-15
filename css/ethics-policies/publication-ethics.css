@@ -243,7 +243,6 @@ svg {
   color: var(--color-primary);
 }
 
-/* ===== shared gi- system ===== */
 .gi-wrap {
   padding: 1rem 0;
 }
@@ -304,137 +303,94 @@ svg {
   margin: 0;
 }
 
-.gi-glance-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 0.5rem;
-}
-.gi-glance-item {
-  background: #f5f8fd;
-  border: 0.5px solid #d0e2f7;
-  border-radius: 10px;
-  padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.gi-glance-label {
-  font-size: 10px;
-  font-weight: 500;
-  color: #9aa0ab;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.gi-glance-value {
-  font-size: 13px;
-  font-weight: 500;
-  color: #0a1e3d;
-}
-@media (max-width: 560px) {
-  .gi-glance-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.gi-divider {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+  margin: 1rem 0;
 }
 
-.gi-note {
+/* Core values tags */
+.gi-areas {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+  margin-top: 0.6rem;
+}
+.gi-area-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #0a1e3d;
+  background: #d0e2f7;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-weight: 500;
+}
+.gi-area-tag i {
+  font-size: 13px;
+}
+
+/* Standards list */
+.gi-std-item {
+  display: flex;
+  gap: 12px;
   align-items: flex-start;
   background: #f5f8fd;
-  border: 0.5px dashed #a8c0e0;
+  border: 0.5px solid #d0e2f7;
   border-radius: 10px;
-  padding: 10px 13px;
-  margin-top: 0.9rem;
-  font-size: 12px;
-  color: #5c6370;
+  padding: 12px 14px;
+  margin-bottom: 8px;
 }
-.gi-note i {
-  font-size: 14px;
-  color: #a97a2c;
-  flex-shrink: 0;
-  margin-top: 1px;
+.gi-std-item:last-child {
+  margin-bottom: 0;
 }
-
-/* ===== board table ===== */
-.gi-table-wrap {
-  overflow-x: auto;
-}
-.gi-table {
-  margin: 20px;
-  width: 90%;
-  border-collapse: collapse;
-  font-size: 12.5px;
-  min-width: 620px;
-}
-.gi-table thead th {
+.gi-std-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
   background: #d0e2f7;
   color: #0a1e3d;
-  font-size: 10.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  text-align: left;
-  padding: 10px 14px;
-  white-space: nowrap;
-}
-.gi-table thead th:first-child {
-  border-radius: 8px 0 0 0;
-}
-.gi-table thead th:last-child {
-  border-radius: 0 8px 0 0;
-}
-.gi-table tbody td {
-  padding: 10px 14px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
-  color: #1a1a1a;
-  vertical-align: middle;
-}
-.gi-table tbody tr:nth-child(even) {
-  background: #f9fbfe;
-}
-.gi-table tbody tr:hover {
-  background: #f0f6fd;
-}
-.gi-table tbody tr:last-child td {
-  border-bottom: none;
-}
-.gi-table .gi-name {
-  font-weight: 600;
-  color: #0a1e3d;
-}
-.gi-table .gi-placeholder {
-  color: #b7bfca;
-  font-style: italic;
-  font-weight: 400;
-}
-.gi-country-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  font-weight: 500;
-  color: #0a1e3d;
-  background: #f5f8fd;
-  border: 0.5px solid #d0e2f7;
-  border-radius: 6px;
-  padding: 3px 8px;
-}
-.gi-country-tag i {
-  font-size: 12px;
-  color: #4c7fb8;
-}
-.gi-row-num {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #eef4fb;
-  color: #7c8896;
-  font-size: 10.5px;
-  font-weight: 600;
+  flex-shrink: 0;
+}
+.gi-std-icon i {
+  font-size: 15px;
+}
+.gi-std-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0a1e3d;
+  margin-bottom: 2px;
+}
+.gi-std-text {
+  font-size: 12px;
+  color: #5c6370;
+  line-height: 1.6;
+}
+
+.gi-callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #d0e2f7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 0.9rem;
+}
+.gi-callout i {
+  font-size: 17px;
+  color: #0a1e3d;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.gi-callout-text {
+  font-size: 13px;
+  color: #0a1e3d;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 @media (max-width: 1180px) {

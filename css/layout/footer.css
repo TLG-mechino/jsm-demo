@@ -65,9 +65,10 @@
   font-size: 12.5px;
 }
 .footer-left {
-  display: flex;
+  display: grid;
+  row-gap: 2px;
   align-items: center;
-  gap: 14px;
+  /* gap: 14px; */
   flex-wrap: wrap;
 }
 .footer-right {

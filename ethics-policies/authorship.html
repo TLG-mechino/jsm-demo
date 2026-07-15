@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/authorship.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-users" aria-hidden="true"></i>
+            <p class="gi-header-title">Authorship</p>
+          </div>
+
+          <!-- Basis for authorship -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-user-check" aria-hidden="true"></i>
+              <span class="gi-section-title">Basis for Authorship</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                All listed authors should have made substantial intellectual
+                contributions to the work.
+              </p>
+              <p>Authorship should be based on meaningful participation in:</p>
+              <div class="gi-steps">
+                <div class="gi-step">
+                  <div class="gi-step-marker">
+                    <div class="gi-step-num">1</div>
+                    <div class="gi-step-line"></div>
+                  </div>
+                  <div class="gi-step-text">
+                    Conception or design of the study
+                  </div>
+                </div>
+                <div class="gi-step">
+                  <div class="gi-step-marker">
+                    <div class="gi-step-num">2</div>
+                    <div class="gi-step-line"></div>
+                  </div>
+                  <div class="gi-step-text">
+                    Acquisition, analysis, or interpretation of data
+                  </div>
+                </div>
+                <div class="gi-step">
+                  <div class="gi-step-marker">
+                    <div class="gi-step-num">3</div>
+                    <div class="gi-step-line"></div>
+                  </div>
+                  <div class="gi-step-text">
+                    Drafting or critically revising the manuscript
+                  </div>
+                </div>
+                <div class="gi-step">
+                  <div class="gi-step-marker">
+                    <div class="gi-step-num">4</div>
+                    <div class="gi-step-line"></div>
+                  </div>
+                  <div class="gi-step-text">Approval of the final version</div>
+                </div>
+                <div class="gi-step">
+                  <div class="gi-step-marker">
+                    <div class="gi-step-num">5</div>
+                    <div class="gi-step-line"></div>
+                  </div>
+                  <div class="gi-step-text">
+                    Acceptance of responsibility for the integrity of the work
+                  </div>
+                </div>
+              </div>
+              <div class="gi-callout">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >Individuals who contributed to the research but do not meet
+                  the criteria for authorship should be acknowledged
+                  appropriately.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Not acceptable -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-ban" aria-hidden="true"></i>
+              <span class="gi-section-title">Not Acceptable</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-nofactor-grid">
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Gift authorship</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Honorary authorship</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Ghost authorship</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Purchased authorship</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Changes to authorship -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-edit" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Changes to the Authorship List</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout-warn">
+                <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+                <span class="gi-callout-warn-text"
+                  >Any changes to the authorship list after submission require
+                  written consent from all authors and approval by the
+                  Editor-in-Chief.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

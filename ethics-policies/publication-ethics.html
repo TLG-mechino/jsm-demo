@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/publication-ethics.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-certificate" aria-hidden="true"></i>
+            <p class="gi-header-title">Publication Ethics</p>
+          </div>
+
+          <!-- Commitment -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-shield-check" aria-hidden="true"></i>
+              <span class="gi-section-title">Our Commitment</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                The Journal of State Management (JSM) is committed to
+                maintaining the highest standards of scholarly publishing,
+                editorial independence, research integrity, and publication
+                ethics.
+              </p>
+              <p>
+                The Journal follows internationally recognized principles of
+                responsible publishing and expects editors, authors, reviewers,
+                and publishers to uphold the values of honesty, transparency,
+                accountability, fairness, and respect throughout the publication
+                process.
+              </p>
+              <div class="gi-areas">
+                <span class="gi-area-tag"
+                  ><i class="ti ti-heart"></i> Honesty</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-eye"></i> Transparency</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-clipboard-check"></i> Accountability</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-scale"></i> Fairness</span
+                >
+                <span class="gi-area-tag"
+                  ><i class="ti ti-hand-heart"></i> Respect</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Guiding Standards -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-book-2" aria-hidden="true"></i>
+              <span class="gi-section-title">Guiding Standards</span>
+            </div>
+            <div class="gi-section-body">
+              <p>
+                JSM adheres to internationally accepted standards for editorial
+                decision-making, peer review, and research integrity, including:
+              </p>
+              <div class="gi-std-item">
+                <div class="gi-std-icon"><i class="ti ti-checkbox"></i></div>
+                <div>
+                  <div class="gi-std-title">COPE Core Practices</div>
+                  <div class="gi-std-text">
+                    Committee on Publication Ethics guidelines for editorial
+                    conduct and integrity.
+                  </div>
+                </div>
+              </div>
+              <div class="gi-std-item">
+                <div class="gi-std-icon"><i class="ti ti-eye-check"></i></div>
+                <div>
+                  <div class="gi-std-title">
+                    Principles of Transparency and Best Practice in Scholarly
+                    Publishing
+                  </div>
+                  <div class="gi-std-text">
+                    Jointly developed standards for responsible, transparent
+                    scholarly publishing.
+                  </div>
+                </div>
+              </div>
+              <div class="gi-std-item">
+                <div class="gi-std-icon"><i class="ti ti-world"></i></div>
+                <div>
+                  <div class="gi-std-title">
+                    International Editorial &amp; Research Integrity Standards
+                  </div>
+                  <div class="gi-std-text">
+                    Accepted norms for editorial decision-making, peer review,
+                    and research integrity.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shared Responsibility -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-users-group" aria-hidden="true"></i>
+              <span class="gi-section-title">Shared Responsibility</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <span class="gi-callout-text"
+                  >All participants in the publication process share
+                  responsibility for ensuring that published research is
+                  original, accurate, ethical, and trustworthy.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

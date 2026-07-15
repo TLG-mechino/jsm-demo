@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạp chí Quản lý Nhà nước – Journal of State Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="/jsm-demo/css/ethics-policies/plagiarism-policy.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="topbar"></div>
+
+      <div id="nav"></div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="container body-content">
+      <div class="body-content-main">
+        <div class="gi-wrap">
+          <div class="gi-header">
+            <i class="ti ti-copy-off" aria-hidden="true"></i>
+            <p class="gi-header-title">Plagiarism Policy</p>
+          </div>
+
+          <!-- Zero tolerance -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-alert-octagon" aria-hidden="true"></i>
+              <span class="gi-section-title">Zero Tolerance</span>
+            </div>
+            <div class="gi-section-body">
+              <div class="gi-callout-warn">
+                <i class="ti ti-ban" aria-hidden="true"></i>
+                <div>
+                  <div class="gi-callout-warn-title">Zero Tolerance Policy</div>
+                  <div class="gi-callout-warn-text">
+                    JSM has zero tolerance for plagiarism and all forms of
+                    academic misconduct.
+                  </div>
+                </div>
+              </div>
+
+              <div class="gi-tool-card">
+                <div class="gi-tool-icon"><i class="ti ti-scan"></i></div>
+                <div>
+                  <div class="gi-tool-name">
+                    Crossref Similarity Check (iThenticate)
+                  </div>
+                  <div class="gi-tool-desc">
+                    All submitted manuscripts are screened before peer review.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unacceptable practices -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-ban" aria-hidden="true"></i>
+              <span class="gi-section-title">Unacceptable Practices</span>
+            </div>
+            <div class="gi-section-body">
+              <p>The Journal considers the following unacceptable:</p>
+              <div class="gi-nofactor-grid">
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Plagiarism</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Self-plagiarism</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Duplicate publication</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Redundant publication</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Data fabrication</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Data falsification</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Manipulated images</span
+                >
+                <span class="gi-nofactor-tag"
+                  ><i class="ti ti-x"></i> Citation manipulation</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Consequences -->
+          <div class="gi-section">
+            <div class="gi-section-hdr">
+              <i class="ti ti-gavel" aria-hidden="true"></i>
+              <span class="gi-section-title"
+                >Where Misconduct Is Identified</span
+              >
+            </div>
+            <div class="gi-section-body">
+              <p>Where serious misconduct is identified, the Journal may:</p>
+              <div class="gi-rule-list">
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-file-x"></i></div>
+                  <div class="gi-rule-text">Reject the manuscript</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-rotate"></i></div>
+                  <div class="gi-rule-text">Retract the published article</div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-building"></i></div>
+                  <div class="gi-rule-text">
+                    Notify the authors' institutions
+                  </div>
+                </div>
+                <div class="gi-rule-item">
+                  <div class="gi-rule-icon"><i class="ti ti-dots"></i></div>
+                  <div class="gi-rule-text">Take other appropriate actions</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ INDEXING & ABSTRACTING ============ -->
+    <div id="indexing"></div>
+
+    <!-- ============ FOOTER ============ -->
+    <div id="footer"></div>
+
+    <script>
+      async function include(id, file) {
+        const response = await fetch(file);
+        document.getElementById(id).innerHTML = await response.text();
+      }
+      async function init() {
+        await include("topbar", "/jsm-demo/layout/new-topbar.html");
+        await include("nav", "/jsm-demo/layout/new-nav.html");
+        await include("indexing", "/jsm-demo/layout/new-indexing.html");
+        await include("footer", "/jsm-demo/layout/new-footer.html");
+
+        setActiveMenu();
+      }
+
+      init();
+      function setActiveMenu() {
+        const items = document.querySelectorAll(".nav-item");
+        console.log(items.length);
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          console.log(link);
+          if (link && link.textContent.trim() === "Ethics & Policies") {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
